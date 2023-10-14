@@ -1,10 +1,3 @@
-/**
- * Single Page Nav Plugin
- * Copyright (c) 2014 Chris Wojcik <hello@chriswojcik.net>
- * Dual licensed under MIT and GPL.
- * @author Chris Wojcik
- * @version 1.2.0
- */
 
 // Utility
 if (typeof Object.create !== 'function') {
