@@ -1,6 +1,19 @@
 # Hi 👋, I'm Kesavan Mariappan
 
-DevOps Engineer with 5 years of experience specializing in AWS, Azure, Kubernetes, Docker, Helm, Terraform, Jenkins, GitLab, and GitHub Actions. 🚀 #DevOps
+DevOps Engineer with 5 years of experience specializing in AWS, Azure, Kubernetes, Docker, Helm, Terraform, Jenkins, GitLab, and GitHub Actions. 🚀 Passionate about automating and optimizing mission-critical deployments. #DevOps
+
+![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)
+![GitHub followers](https://img.shields.io/github/followers/kesavan-mariappan?style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/kesavan_m?style=social)
+
+## Table of Contents
+- [About Me](#about-me)
+- [Languages and Tools](#-languages-and-tools-i-use)
+- [Contact Me](#-where-to-find-me)
+- [GitHub Stats](#-github-stats)
+
+## About Me
+I am a seasoned DevOps Engineer with extensive experience in creating and managing scalable, reliable, and secure cloud infrastructure. My expertise lies in leveraging a wide array of tools and technologies to streamline CI/CD pipelines and enhance operational efficiency.
 
 ## 🚀 Languages and Tools I Use
 
@@ -32,6 +45,7 @@ DevOps Engineer with 5 years of experience specializing in AWS, Azure, Kubernete
 - [LinkedIn](https://linkedin.com/in/kesavan-mariappan-20b75b202)
 - [Instagram](https://instagram.com/_kesavan_mariappan_)
 - [Medium](https://medium.com/@mkesavan170)
+- [Gmail](mkesavan170gmail.com)
 
 ## 📊 GitHub Stats
 
