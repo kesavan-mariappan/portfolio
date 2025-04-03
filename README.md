@@ -1,5 +1,5 @@
 # 💫 About Me:
-DevOps Engineer with 3yrs experience specializing in Kubernetes, Docker, Helm, Terraform, Jenkins, and Github Actions. 🚀 #DevOps
+DevOps Engineer with 5yrs experience specializing in AWS, Azure, Kubernetes, Docker, Helm, Terraform, Jenkins, Gitlab and Github Actions. 🚀 #DevOps
 
 
 ## 🌐 Socials:
