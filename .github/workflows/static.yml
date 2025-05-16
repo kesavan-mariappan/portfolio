@@ -1,10 +1,11 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+# This workflow deploys the static content to GitHub Pages
+# For more information see: https://github.com/actions/deploy-pages
+
+name: Deploy static content to GitHub Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ["main"] # or "master" depending on your default branch name
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -16,13 +17,13 @@ permissions:
   id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# However, do NOT cancel in-progress runs as they might be deploying to a production environment.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  # Single deploy job since we're just deploying static content
   deploy:
     environment:
       name: github-pages
@@ -30,14 +31,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        # Uploads the entire repository content as the static site artifact
+        # Assumes index.html and style.css are at the root of the repo
+        uses: actions/upload-pages-artifact@v4
         with:
-          # Upload entire repository
+          # Upload the entire repository content
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
