@@ -412,40 +412,98 @@ a:hover {
 
 /* --- Skills Section Styling --- */
 
-.skills-list {
+/* The main container for skill categories */
+#skills .container {
+    /* REMOVED grid properties */
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    /* gap: 30px; */
+    /* align-items: stretch; */
+
+    /* Ensure it flows like a block container */
+    display: block; /* Or just remove grid properties */
+    padding: 0 20px; /* Keep padding */
+    max-width: 1200px; /* Keep max-width */
+    margin: auto; /* Keep centering */
+    overflow: hidden; /* Keep overflow */
+}
+
+/* Style for individual skill categories */
+.skill-category {
+    background: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    /* Add vertical margin between categories */
+    margin-bottom: 30px;
+    /* Ensure it takes full width in the flow layout */
+    width: 100%;
+
+    display: flex; /* Keep flexbox within category */
+    flex-direction: column; /* Keep stack items vertically */
+}
+
+/* Style for category headings */
+.skill-category h3 {
+    font-family: var(--heading-font);
+    color: var(--dark-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    border-bottom: 2px solid var(--gray-background); /* Subtle separator */
+    padding-bottom: 10px;
+    display: flex; /* Use flex for icon and text */
+    align-items: center;
+}
+
+.skill-category h3 i {
+    margin-right: 10px;
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+/* Style for the list of skills WITHIN a category */
+.skill-category ul.skills-list {
     list-style: none;
     padding: 0;
-    text-align: center;
-    display: flex;
+    margin: 0; /* Remove default ul margin */
+    display: flex; /* Use flexbox for pills */
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    gap: 8px; /* Smaller gap between pills within a category */
+     /* Removed justify-content: center; to align pills to the left within the category */
 }
-.skills-list li {
-    background: var(--white-color);
-    color: var(--dark-color);
-    padding: 12px 25px;
-    margin: 0;
-    border-radius: 30px;
-    font-size: 1em;
+
+/* Style for individual skill pills (remains similar, but adjusted padding/font size) */
+.skill-category ul.skills-list li {
+    background: #eee; /* Light grey background */
+    color: #444;
+    padding: 8px 15px; /* Adjusted padding */
+    margin: 0; /* Handled by gap */
+    border-radius: 20px; /* Pill shape */
+    font-size: 0.95em; /* Slightly smaller font */
     font-weight: 400;
-    border: 1px solid var(--border-color);
+    border: 1px solid #ccc;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     display: flex;
     align-items: center;
 }
-.skills-list li i {
-    margin-right: 8px;
+
+.skill-category ul.skills-list li i {
+    margin-right: 6px; /* Smaller space for icon */
     color: var(--primary-color);
+    font-size: 1em; /* Adjusted icon size */
 }
-.skills-list li:hover {
+
+.skill-category ul.skills-list li:hover {
     background-color: var(--primary-color);
     color: var(--white-color);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px); /* Slightly less lift */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     border-color: var(--primary-color);
 }
-.skills-list li:hover i {
+
+.skill-category ul.skills-list li:hover i {
      color: var(--white-color);
 }
 
@@ -518,7 +576,7 @@ a:hover {
     gap: 8px; /* Space between tools */
 }
 .project-tools-list li {
-     background: #eee; /* Light background for tools */
+     background: #eee; /* Light grey background for tools */
      color: #444;
      padding: 5px 10px;
      border-radius: 5px;
@@ -607,7 +665,127 @@ footer i.fa-heart {
 
 /* --- Responsive Design --- */
 
-/* Styles applied universally */
+/* Tablets and smaller desktops (Adjustments for sizing) */
+@media (max-width: 992px) {
+    /* Adjustments for elements on tablets/smaller desktops */
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+
+    #hero h1 {
+        font-size: 3em;
+    }
+
+    #hero .title {
+        font-size: 1.4em;
+    }
+
+    #hero .tagline {
+        font-size: 1.1em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+
+    .experience-summary {
+        font-size: 1.1em;
+    }
+
+    .experience-list li {
+        font-size: 0.95em;
+         padding-left: 20px;
+    }
+
+     .experience-list li::before {
+        font-size: 0.8em;
+     }
+
+    .responsibility-list li,
+    .strengths-list li {
+        font-size: 0.95em;
+        padding-left: 25px;
+    }
+
+    .responsibility-list li::before,
+    .strengths-list li::before {
+        font-size: 1em;
+    }
+
+    .skills-list li {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+
+    .project-item {
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+
+    .project-item h3 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
+
+    .project-meta {
+        font-size: 0.9em;
+    }
+
+     .project-responsibilities li {
+        font-size: 0.95em;
+         padding-left: 18px;
+     }
+
+      .project-responsibilities li::before {
+         font-size: 0.7em;
+          top: 0.2em;
+     }
+
+     .project-tools-list li {
+        font-size: 0.85em;
+         padding: 4px 8px;
+     }
+
+
+     .education-item h3 {
+        font-size: 1.3em;
+     }
+
+     .education-item p {
+        font-size: 1em;
+     }
+
+
+     .social-links a i {
+        font-size: 1.8em;
+    }
+
+    /* Adjust padding/margins for categories in flow layout */
+     .skill-category {
+        padding: 20px;
+         margin-bottom: 25px;
+     }
+
+    .skill-category h3 {
+        font-size: 1.3em;
+         margin-bottom: 15px;
+    }
+
+     .skill-category ul.skills-list li {
+         padding: 7px 12px;
+         font-size: 0.9em;
+     }
+      .skill-category ul.skills-list li i {
+         margin-right: 5px;
+     }
+}
+
 
 /* Mobile devices (Below 768px, adjustments for sizing) */
 @media (max-width: 768px) {
@@ -734,8 +912,8 @@ footer i.fa-heart {
          margin-bottom: 6px;
      }
        .project-responsibilities li::before {
-         font-size: 0.7em;
-         top: 0.2em;
+         font-size: 0.6em;
+          top: 0.2em;
      }
 
       .project-tools-list li {
@@ -764,6 +942,34 @@ footer i.fa-heart {
     footer {
         padding: 30px 0;
     }
+
+    /* Adjust padding/margins for categories in flow layout on mobile */
+    .skill-category {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .skill-category h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .skill-category h3 i {
+        font-size: 1.1em;
+         margin-right: 8px;
+    }
+
+    .skill-category ul.skills-list {
+        gap: 6px; /* Reduce gap on mobile */
+    }
+
+    .skill-category ul.skills-list li {
+         padding: 6px 10px;
+         font-size: 0.85em;
+    }
+     .skill-category ul.skills-list li i {
+         margin-right: 4px;
+     }
 }
 
 /* Extra small devices */
@@ -905,5 +1111,36 @@ footer i.fa-heart {
      footer {
         padding: 20px 0;
         font-size: 0.8em;
+     }
+
+     /* Adjust padding/margins for categories in flow layout on extra small mobile */
+      #skills .container {
+         padding: 0 10px;
+     }
+
+     .skill-category {
+        padding: 12px;
+         margin-bottom: 15px;
+     }
+
+     .skill-category h3 {
+        font-size: 1.1em;
+         margin-bottom: 8px;
+     }
+       .skill-category h3 i {
+         font-size: 1em;
+          margin-right: 6px;
+     }
+
+     .skill-category ul.skills-list {
+        gap: 5px;
+     }
+
+     .skill-category ul.skills-list li {
+         padding: 5px 8px;
+         font-size: 0.8em;
+     }
+     .skill-category ul.skills-list li i {
+         margin-right: 3px;
      }
 }
