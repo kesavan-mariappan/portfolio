@@ -9,12 +9,17 @@
     --text-color: #555;
     --list-marker-color: #34495e; /* Dark color for list markers */
     --border-color: #ddd; /* Light grey border */
+    --gray-background: #f0f0f0; /* Consistent light grey background */
 
 
     --heading-font: 'Poppins', sans-serif;
     --body-font: 'Roboto', sans-serif;
 
     --navbar-height: 60px;
+    --drawer-width: 280px; /* Width of the slide-out drawer */
+    --drawer-bg: var(--dark-color); /* Background of the drawer */
+    --drawer-link-color: var(--light-color);
+    --drawer-link-hover-color: var(--primary-color);
 }
 
 body {
@@ -24,9 +29,15 @@ body {
     line-height: 1.6;
     background-color: var(--light-color);
     color: var(--text-color);
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scroll from drawer initially */
     transition: padding-top 0.3s ease;
 }
+
+/* Optional: Disable body scrolling when drawer is open */
+body.drawer-open {
+    overflow-y: hidden;
+}
+
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -55,7 +66,7 @@ a:hover {
 }
 
 .section-bg {
-    background-color: #f0f0f0;
+    background-color: var(--gray-background);
 }
 
 .section-title {
@@ -96,7 +107,7 @@ a:hover {
 
 #navbar .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space out title and icon */
     align-items: center;
 }
 
@@ -116,48 +127,116 @@ a:hover {
     color: var(--primary-color);
 }
 
-#navbar ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    /* Allow flex items to wrap */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end; /* Align links to the right */
-    align-items: center;
+/* Hide the regular navbar menu entirely */
+.navbar-menu {
+    display: none;
 }
 
-#navbar ul li {
-    /* Use flex properties for spacing instead of margin-left on li */
-    /* margin-left: 30px; */ /* REMOVE or reduce this */
-     margin: 0 10px; /* Add margin on both sides for spacing */
-     white-space: nowrap; /* Prevent individual link text from wrapping */
-}
 
-#navbar ul li a {
+/* --- Hamburger Icon Styling --- */
+.hamburger-icon {
+    display: block; /* Always visible */
+    background: transparent;
+    border: none;
     color: var(--white-color);
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.hamburger-icon:hover {
+    color: var(--primary-color);
+}
+
+/* --- Drawer Menu Styling --- */
+.drawer-menu {
+    position: fixed;
+    top: 0;
+    right: 0; /* Slide from the right, or left: 0; for sliding from left */
+    width: var(--drawer-width);
+    height: 100vh; /* Full viewport height */
+    background: var(--drawer-bg);
+    color: var(--drawer-link-color);
+    z-index: 999; /* Below the navbar */
+    box-shadow: -3px 0 8px rgba(0, 0, 0, 0.3); /* Shadow on the side it slides from */
+    transform: translateX(100%); /* Initially off-screen to the right */
+    transition: transform 0.4s ease-in-out; /* Animation for sliding */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    padding: 80px 20px 20px 20px; /* Padding top to clear fixed navbar/close button */
+    display: flex; /* Use flex to arrange content */
+    flex-direction: column; /* Stack content vertically */
+}
+
+/* Style for the close button inside the drawer */
+.close-drawer {
+     position: absolute;
+     top: 15px;
+     right: 15px;
+     background: transparent;
+     border: none;
+     color: var(--light-color);
+     font-size: 1.8em;
+     cursor: pointer;
+     padding: 5px;
+     transition: color 0.3s ease;
+}
+
+.close-drawer:hover {
+     color: var(--primary-color);
+}
+
+
+/* State when the drawer is open (toggled by JS) */
+.drawer-menu.open {
+    transform: translateX(0); /* Slide into view */
+}
+
+/* Style links inside the drawer */
+.drawer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Allow the list to take up available space */
+    display: block; /* Stack list */
+}
+
+.drawer-menu ul li {
+    margin: 15px 0; /* Vertical spacing between links */
+    white-space: normal; /* Allow text to wrap */
+     display: block; /* Stack list items */
+}
+
+.drawer-menu ul li a {
+    color: var(--drawer-link-color);
     font-family: var(--heading-font);
-    font-weight: 400;
-    /* Slightly reduced horizontal padding */
-    padding: 8px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1.2em;
+    display: block; /* Make links full width clickable */
+    padding: 10px 0;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-#navbar ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--primary-color);
+.drawer-menu ul li a:hover {
+    color: var(--drawer-link-hover-color);
+    background-color: rgba(255, 255, 255, 0.08); /* Subtle highlight */
 }
 
-#navbar ul li a.active {
-    color: var(--primary-color);
-    font-weight: 600;
-    border-bottom: 2px solid var(--primary-color);
+/* Optional: Style social links inside the drawer */
+.drawer-social {
+    margin-top: 30px;
+    text-align: center;
+}
+.drawer-social a {
+    color: var(--drawer-link-color);
+    margin: 0 10px;
+    font-size: 1.5em;
+}
+.drawer-social a:hover {
+     color: var(--drawer-link-hover-color);
 }
 
 
 /* --- Hero Section Styling --- */
-
 #hero {
     background: linear-gradient(to right, var(--primary-color), #00bcd4);
     color: var(--white-color);
@@ -166,7 +245,6 @@ a:hover {
     position: relative;
     overflow: hidden;
 }
-
 .hero-content {
     position: relative;
     z-index: 1;
@@ -175,14 +253,12 @@ a:hover {
     align-items: center;
     justify-content: center;
 }
-
 .greeting {
     font-size: 1.4em;
     font-weight: 300;
     margin-bottom: 5px;
     color: rgba(255, 255, 255, 0.9);
 }
-
 #hero h1 {
     margin: 0;
     font-size: 4em;
@@ -191,7 +267,6 @@ a:hover {
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 #hero .title {
     margin-top: 0;
     font-size: 1.6em;
@@ -199,7 +274,6 @@ a:hover {
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 20px;
 }
-
 #hero .tagline {
     margin-top: 15px;
     font-size: 1.2em;
@@ -209,12 +283,10 @@ a:hover {
     margin-right: auto;
     line-height: 1.8;
 }
-
 .hero-buttons .btn {
     position: relative; /* Needed for z-index to work */
     z-index: 10; /* Give it a z-index higher than potential overlapping elements */
 }
-
 .hero-buttons {
     margin-top: 30px;
     display: flex;
@@ -222,7 +294,6 @@ a:hover {
     gap: 20px;
     flex-wrap: wrap;
 }
-
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -235,26 +306,22 @@ a:hover {
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     border: none;
 }
-
 .btn-primary {
     background-color: var(--secondary-color);
     color: var(--white-color);
     box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3);
 }
-
 .btn-primary:hover {
     background-color: #27ae60;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(46, 204, 113, 0.4);
 }
-
 .btn-secondary {
     background-color: var(--white-color);
     color: var(--dark-color);
     border: 2px solid var(--dark-color);
     box-shadow: 0 4px 8px rgba(44, 62, 80, 0.1);
 }
-
 .btn-secondary:hover {
     background-color: var(--dark-color);
     color: var(--white-color);
@@ -283,19 +350,16 @@ a:hover {
     margin-bottom: 30px;
     color: var(--dark-color);
 }
-
 #experience .experience-summary i {
     margin-right: 10px;
     color: var(--primary-color);
 }
-
 .experience-list {
     list-style: none;
     padding: 0;
     max-width: 900px;
     margin: 0 auto;
 }
-
 .experience-list li {
      position: relative;
     padding-left: 25px; /* Space for bullet */
@@ -304,7 +368,6 @@ a:hover {
     font-size: 1em;
     color: var(--text-color);
 }
-
 .experience-list li::before {
     content: "\f061"; /* Font Awesome Arrow Right icon */
     font-family: "Font Awesome 6 Free";
@@ -325,7 +388,6 @@ a:hover {
     max-width: 900px;
     margin: 0 auto;
 }
-
 .responsibility-list li,
 .strengths-list li {
     position: relative;
@@ -335,7 +397,6 @@ a:hover {
     font-size: 1em;
     color: var(--text-color);
 }
-
 .responsibility-list li::before,
 .strengths-list li::before {
     content: "\f058";
@@ -360,7 +421,6 @@ a:hover {
     justify-content: center;
     gap: 15px;
 }
-
 .skills-list li {
     background: var(--white-color);
     color: var(--dark-color);
@@ -374,12 +434,10 @@ a:hover {
     display: flex;
     align-items: center;
 }
-
 .skills-list li i {
     margin-right: 8px;
     color: var(--primary-color);
 }
-
 .skills-list li:hover {
     background-color: var(--primary-color);
     color: var(--white-color);
@@ -387,7 +445,6 @@ a:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     border-color: var(--primary-color);
 }
-
 .skills-list li:hover i {
      color: var(--white-color);
 }
@@ -403,46 +460,38 @@ a:hover {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .project-item:hover {
     transform: translateY(-5px); /* Lift effect on hover */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-
-
 .project-item h3 {
     font-family: var(--heading-font);
     color: var(--dark-color);
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 1.8em;
-    border-bottom: 2px solid var(--light-color); /* Subtle separator */
+    border-bottom: 2px solid var(--gray-background); /* Subtle separator */
     padding-bottom: 10px;
 }
-
 .project-meta {
     font-size: 0.95em;
     color: #777; /* Lighter color for meta info */
     margin-bottom: 15px;
 }
-
 .project-meta i {
     margin-right: 8px;
     color: var(--primary-color);
 }
-
 .project-responsibilities-title {
      font-weight: 600;
      margin-bottom: 10px;
      color: var(--dark-color);
 }
-
 .project-responsibilities {
     list-style: none;
     padding: 0 0 0 15px; /* Add left padding for visual indentation */
     margin-bottom: 20px;
 }
-
 .project-responsibilities li {
     position: relative;
     padding-left: 20px; /* Space for custom bullet */
@@ -451,7 +500,6 @@ a:hover {
     font-size: 1em;
     color: var(--text-color);
 }
-
 .project-responsibilities li::before {
     content: "\f061"; /* Arrow icon */
     font-family: "Font Awesome 6 Free";
@@ -462,7 +510,6 @@ a:hover {
     color: var(--primary-color);
     font-size: 0.8em;
 }
-
 .project-tools-list {
     list-style: none;
     padding: 0;
@@ -470,7 +517,6 @@ a:hover {
     flex-wrap: wrap;
     gap: 8px; /* Space between tools */
 }
-
 .project-tools-list li {
      background: #eee; /* Light background for tools */
      color: #444;
@@ -486,7 +532,6 @@ a:hover {
     max-width: 600px;
     margin: 0 auto;
 }
-
 .education-item h3 {
     font-family: var(--heading-font);
     color: var(--dark-color);
@@ -494,13 +539,11 @@ a:hover {
     margin-bottom: 15px;
     font-size: 1.5em;
 }
-
 .education-item p {
      margin-bottom: 10px;
      font-size: 1.1em;
      color: var(--text-color);
 }
-
 .education-item i {
     margin-right: 8px;
     color: var(--primary-color);
@@ -513,38 +556,31 @@ a:hover {
     font-size: 1.1em;
     color: var(--text-color);
 }
-
 .contact-details p {
     margin-bottom: 15px;
 }
-
 .contact-details i {
      margin-right: 10px;
      color: var(--primary-color);
 }
-
 .contact-details a {
     color: var(--text-color);
      text-decoration: underline;
 }
-
 .contact-details a:hover {
      color: var(--primary-color);
      text-decoration: none;
 }
-
 .social-links {
     margin-top: 30px;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
-
 .social-links a {
     color: var(--dark-color);
     transition: color 0.3s ease, transform 0.2s ease;
 }
-
 .social-links a:hover {
     color: var(--primary-color);
     transform: translateY(-3px);
@@ -561,11 +597,9 @@ footer {
     margin-top: 40px;
     font-size: 0.9em;
 }
-
 footer p {
     margin: 5px 0;
 }
-
 footer i.fa-heart {
     color: #e74c3c;
 }
@@ -573,155 +607,21 @@ footer i.fa-heart {
 
 /* --- Responsive Design --- */
 
-/* Tablets and smaller desktops */
-@media (max-width: 992px) {
-    .section-padding {
-        padding: 60px 0;
-    }
+/* Styles applied universally */
 
-    .section-title {
-        font-size: 2em;
-        margin-bottom: 40px;
-    }
-
-    #hero h1 {
-        font-size: 3em;
-    }
-
-    #hero .title {
-        font-size: 1.4em;
-    }
-
-    #hero .tagline {
-        font-size: 1.1em;
-    }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.95em;
-    }
-
-    .experience-summary {
-        font-size: 1.1em;
-    }
-
-    .experience-list li {
-        font-size: 0.95em;
-         padding-left: 20px;
-    }
-
-     .experience-list li::before {
-        font-size: 0.8em;
-     }
-
-    .responsibility-list li,
-    .strengths-list li {
-        font-size: 0.95em;
-        padding-left: 25px;
-    }
-
-    .responsibility-list li::before,
-    .strengths-list li::before {
-        font-size: 1em;
-    }
-
-    .skills-list li {
-        padding: 10px 20px;
-        font-size: 0.95em;
-    }
-
-    .project-item {
-        padding: 25px;
-        margin-bottom: 30px;
-    }
-
-    .project-item h3 {
-        font-size: 1.6em;
-        margin-bottom: 15px;
-    }
-
-    .project-meta {
-        font-size: 0.9em;
-    }
-
-     .project-responsibilities li {
-        font-size: 0.95em;
-         padding-left: 18px;
-     }
-
-      .project-responsibilities li::before {
-         font-size: 0.7em;
-          top: 0.2em;
-     }
-
-     .project-tools-list li {
-        font-size: 0.85em;
-         padding: 4px 8px;
-     }
-
-
-     .education-item h3 {
-        font-size: 1.3em;
-     }
-
-     .education-item p {
-        font-size: 1em;
-     }
-
-
-     .social-links a i {
-        font-size: 1.8em;
-    }
-
-     /* Adjusted spacing for navbar links on smaller desktops */
-    #navbar ul li {
-        margin: 0 8px; /* Reduced margin */
-    }
-
-    #navbar ul li a {
-        padding: 8px 6px; /* Reduced padding */
-    }
-
-}
-
-/* Mobile devices */
+/* Mobile devices (Below 768px, adjustments for sizing) */
 @media (max-width: 768px) {
-    /* This breakpoint forces stacking, so wrapping on one line isn't an issue here */
     body {
-        padding-top: calc(var(--navbar-height) + 40px);
-    }
-
-    #navbar .container {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 20px;
+        padding-top: var(--navbar-height);
     }
 
     #navbar h1 {
-        margin-bottom: 10px;
         font-size: 1.6em;
     }
 
-    #navbar ul {
-         width: 100%;
-         text-align: center;
-    }
-
-    #navbar ul li {
-        display: block; /* Links are now stacked vertically */
-        margin: 5px 0; /* Adjust spacing */
-        white-space: normal; /* Allow text wrapping in stacked view */
-    }
-
-    #navbar ul li a {
-        padding: 10px 0;
-        display: block;
-    }
-
-   /* ... rest of mobile adjustments ... */
-
-    #hero {
-         padding: 80px 0 60px 0;
+     .drawer-menu {
+        width: 220px; /* Smaller width for very small screens */
+        padding: 60px 15px 15px 15px; /* Adjusted padding */
     }
 
     #hero h1 {
@@ -833,7 +733,7 @@ footer i.fa-heart {
          padding-left: 18px;
          margin-bottom: 6px;
      }
-      .project-responsibilities li::before {
+       .project-responsibilities li::before {
          font-size: 0.7em;
          top: 0.2em;
      }
@@ -869,7 +769,7 @@ footer i.fa-heart {
 /* Extra small devices */
 @media (max-width: 480px) {
      body {
-         padding-top: calc(var(--navbar-height) + 60px);
+         padding-top: var(--navbar-height);
      }
 
      #navbar h1 {
@@ -975,12 +875,7 @@ footer i.fa-heart {
          padding: 0 0 0 8px;
          margin-bottom: 10px;
      }
-      .project-responsibilities li {
-        font-size: 0.85em;
-         padding-left: 16px;
-         margin-bottom: 4px;
-     }
-       .project-responsibilities li::before {
+      .project-responsibilities li::before {
          font-size: 0.6em;
           top: 0.2em;
      }
@@ -999,7 +894,11 @@ footer i.fa-heart {
         font-size: 0.9em;
      }
 
-      .social-links a i {
+     .contact-details {
+        font-size: 1em;
+     }
+
+     .social-links a i {
         font-size: 1.3em;
     }
 
