@@ -90,6 +90,25 @@ a:hover {
     border-radius: 2px;
 }
 
+/* --- Scroll Animation Styles --- */
+/* Add these styles */
+.animate-on-scroll {
+    opacity: 0; /* Start hidden */
+    transform: translateY(40px); /* Start slightly below its final position */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Animation properties */
+    will-change: opacity, transform; /* Optimize for animation */
+}
+
+/* This class is added by JavaScript when the element is in view */
+.animate-on-scroll.is-visible {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to its original position */
+}
+
+/* Optional: Add delays for a staggered effect if you apply the class to multiple elements */
+/* .animate-on-scroll:nth-child(odd) { transition-delay: 0.1s; } */
+/* .animate-on-scroll:nth-child(even) { transition-delay: 0.2s; } */
+
 
 /* --- Navbar Styling --- */
 
@@ -272,17 +291,31 @@ a:hover {
     font-size: 1.6em;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Adjusted margin */
 }
+/* Added font-weight bold to the tagline */
 #hero .tagline {
-    margin-top: 15px;
+    margin-top: 10px; /* Adjusted margin */
     font-size: 1.2em;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9); /* Slightly adjusted color for prominence */
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.8;
+    line-height: 1.6; /* Adjusted line height */
+    font-weight: bold; /* Make the tagline bold */
 }
+/* Style for the new hero description paragraph */
+.hero-description {
+     margin-top: 8px; /* Space above */
+     font-size: 1em; /* Slightly smaller than tagline */
+     color: rgba(255, 255, 255, 0.8);
+     max-width: 900px;
+     margin-left: auto;
+     margin-right: auto;
+     line-height: 1.6;
+}
+
+
 .hero-buttons .btn {
     position: relative; /* Needed for z-index to work */
     z-index: 10; /* Give it a z-index higher than potential overlapping elements */
@@ -412,16 +445,9 @@ a:hover {
 
 /* --- Skills Section Styling --- */
 
-/* The main container for skill categories */
+/* The main container for skill categories in the flow layout */
 #skills .container {
-    /* REMOVED grid properties */
-    /* display: grid; */
-    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-    /* gap: 30px; */
-    /* align-items: stretch; */
-
-    /* Ensure it flows like a block container */
-    display: block; /* Or just remove grid properties */
+    display: block; /* Ensure it flows like a block container */
     padding: 0 20px; /* Keep padding */
     max-width: 1200px; /* Keep max-width */
     margin: auto; /* Keep centering */
@@ -689,6 +715,10 @@ footer i.fa-heart {
         font-size: 1.1em;
     }
 
+    .hero-description {
+         font-size: 0.95em;
+     }
+
     .btn {
         padding: 10px 20px;
         font-size: 0.95em;
@@ -784,6 +814,7 @@ footer i.fa-heart {
       .skill-category ul.skills-list li i {
          margin-right: 5px;
      }
+
 }
 
 
@@ -808,10 +839,19 @@ footer i.fa-heart {
 
     #hero .title {
         font-size: 1.2em;
+        margin-bottom: 8px; /* Adjusted margin */
     }
 
      #hero .tagline {
         font-size: 1em;
+        margin-top: 8px; /* Adjusted margin */
+        line-height: 1.5; /* Adjusted line height */
+     }
+
+     .hero-description {
+        font-size: 0.9em;
+         margin-top: 6px;
+         line-height: 1.5;
      }
 
     .hero-buttons {
@@ -921,7 +961,6 @@ footer i.fa-heart {
         padding: 4px 7px;
      }
 
-
      .education-item h3 {
         font-size: 1.2em;
          margin-bottom: 10px;
@@ -993,7 +1032,16 @@ footer i.fa-heart {
      #hero .tagline {
         font-size: 0.9em;
         padding: 0 10px;
+        margin-top: 6px;
+        line-height: 1.4;
      }
+     .hero-description {
+         font-size: 0.85em;
+         margin-top: 4px;
+         line-height: 1.4;
+         padding: 0 10px;
+     }
+
 
      .hero-buttons {
         gap: 10px;
