@@ -9,20 +9,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <link rel="icon" href="/favicon.png" type="image/png">
 </head>
 <body class="portfolio-theme">
 
     <nav id="navbar">
         <div class="container">
-            <h1><a href="#">Kesavan Mariappan</a></h1>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li> <li><a href="#roles">Roles</a></li>
-                <li><a href="#skills">Skills</a></li>
-                 <li><a href="#projects">Projects</a></li> <li><a href="#education">Education</a></li> <li><a href="#strengths">Strengths</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+            <h1><a href="#">Kesavan M.</a></h1>
+
+            <button class="hamburger-icon" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="drawer-menu">
+                 <button class="close-drawer" aria-label="Close navigation">
+                     <i class="fas fa-times"></i>
+                 </button>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#roles">Roles</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#strengths">Strengths</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                 </div>
+
+            </div>
     </nav>
 
     <header id="hero">
@@ -34,7 +49,7 @@
                     <p class="title">DevOps Engineer III</p>
                     <p class="tagline">DevOps Engineer with 5yrs experience specializing in Kubernetes, Docker, Helm, Terraform, Jenkins, and Github Actions.</p>
                     <div class="hero-buttons">
-                         <a href="#about" class="btn btn-primary">Learn More About Me</a>                         
+                         <a href="#about" class="btn btn-primary">Learn More About Me</a>
                          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                     </div>
                 </div>
@@ -76,7 +91,8 @@
     </section>
 
 
-    <section id="roles" class="section-padding"> <div class="container">
+    <section id="roles" class="section-padding">
+        <div class="container">
             <h2 class="section-title">Roles and Responsibilities</h2>
             <ul class="responsibility-list">
                 <li>Developing and executing robust CI/CD pipelines.</li>
@@ -95,22 +111,37 @@
         </div>
     </section>
 
-    <section id="skills" class="section-padding section-bg"> <div class="container">
-            <h2 class="section-title">Tools & Skillsets</h2> <ul class="skills-list">
-                <li><i class="fab fa-git-alt"></i> Git</li> <li><i class="fab fa-github"></i> Github</li>
-                 <li><i class="fab fa-bitbucket"></i> Bitbucket</li> <li><i class="fas fa-server"></i> Maven</li> <li><i class="fab fa-npm"></i> NPM</li> <li><i class="fab fa-jenkins"></i> Jenkins</li>
-                <li><i class="fab fa-github-alt"></i> GitHub Actions</li> <li><i class="fab fa-gitlab"></i> GitLab CICD</li> <li><i class="fab fa-kubernetes"></i> Kubernetes</li>
+    <section id="skills" class="section-padding section-bg">
+        <div class="container">
+            <h2 class="section-title">Tools & Skillsets</h2>
+            <ul class="skills-list">
+                <li><i class="fab fa-git-alt"></i> Git</li>
+                <li><i class="fab fa-github"></i> Github</li>
+                 <li><i class="fab fa-bitbucket"></i> Bitbucket</li>
+                 <li><i class="fas fa-server"></i> Maven</li>
+                 <li><i class="fab fa-npm"></i> NPM</li>
+                 <li><i class="fab fa-jenkins"></i> Jenkins</li>
+                <li><i class="fab fa-github-alt"></i> GitHub Actions</li>
+                <li><i class="fab fa-gitlab"></i> GitLab CICD</li>
+                <li><i class="fab fa-kubernetes"></i> Kubernetes</li>
                 <li><i class="fab fa-docker"></i> Docker</li>
                  <li><i class="fas fa-chart-line"></i> Grafana</li>
-                <li><i class="fas fa-broadcast-tower"></i> Prometheus</li> <li><i class="fab fa-aws"></i> AWS Services</li> <li><i class="fab fa-azure"></i> Azure Services</li> <li><i class="fas fa-cloud"></i> Terraform</li>
+                <li><i class="fas fa-broadcast-tower"></i> Prometheus</li>
+                 <li><i class="fab fa-aws"></i> AWS Services</li>
+                 <li><i class="fab fa-azure"></i> Azure Services</li>
+                <li><i class="fas fa-cloud"></i> Terraform</li>
                  <li><i class="fas fa-ship"></i> Helm</li>
                   <li><i class="fas fa-bug-slash"></i> SonarQube</li>
                   <li><i class="fas fa-tachometer-alt"></i> JMeter</li>
-                   <li><i class="fas fa-terminal"></i> Bash Scripting</li> <li><i class="fas fa-project-diagram"></i> Jira</li> <li><i class="fas fa-book"></i> Confluence</li> </ul>
+                   <li><i class="fas fa-terminal"></i> Bash Scripting</li>
+                    <li><i class="fas fa-project-diagram"></i> Jira</li>
+                     <li><i class="fas fa-book"></i> Confluence</li>
+            </ul>
         </div>
     </section>
 
-    <section id="projects" class="section-padding"> <div class="container">
+    <section id="projects" class="section-padding">
+        <div class="container">
             <h2 class="section-title">Recent Engagement Highlights</h2>
 
             <div class="project-item">
@@ -166,7 +197,7 @@
                     <li>Docker</li>
                     <li>GitHub Actions</li>
                     <li>Sonarqube</li>
-                    <li>ECR</li> <li>GitHub</li>
+                    <li>GitHub</li>
                  </ul>
             </div>
 
@@ -198,7 +229,8 @@
         </div>
     </section>
 
-     <section id="education" class="section-padding section-bg"> <div class="container">
+    <section id="education" class="section-padding section-bg">
+        <div class="container">
             <h2 class="section-title">Educational Background</h2>
             <div class="education-item">
                 <h3>Bachelor of Engineering (B.E) in Computer Science and Engineering (CSE)</h3>
@@ -208,27 +240,30 @@
         </div>
     </section>
 
-    <section id="strengths" class="section-padding"> <div class="container">
+    <section id="strengths" class="section-padding">
+        <div class="container">
             <h2 class="section-title">Key Strengths</h2>
             <ul class="strengths-list">
                 <li>Skilled in managing multi-cloud setups including AWS, Azure, and Digital Ocean.</li>
                 <li>Capability to manage teams and handle client calls.</li>
                 <li>Proficient in building and managing robust CI/CD Pipelines.</li>
+            <li>Strong understanding on data encryption and dynamic data masking and query editor and auditing as well.</li>
             </ul>
         </div>
     </section>
 
 
-    <section id="contact" class="section-padding section-bg"> <div class="container">
+    <section id="contact" class="section-padding section-bg">
+        <div class="container">
              <h2 class="section-title">Get In Touch</h2>
              <div class="contact-details">
-                 <p><i class="fas fa-phone-alt"></i> Phone: +91 9566856628</p>
+                 <p><i class="fas fa-phone-alt"></i> Phone: +91 9566666628</p>
                  <p><i class="fas fa-envelope"></i> Email: <a href="mailto:mkesavan170@gmail.com">mkesavan170@gmail.com</a></p>
                  <p><i class="fas fa-map-marker-alt"></i> Location: Eral, Tamil Nadu, 628802</p>
                  <div class="social-links">
-                     <a href="https://www.linkedin.com/in/kesavan-mariappan-20b75b202/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
-                     <a href="https://github.com/kesavan-mariappan" target="_blank" title="GitHub"><i class="fab fa-github-square fa-2x"></i></a>
-                     </div>
+                     <a href="https://www.linkedin.com/in/kesavan-mariappan-b7290b1a9/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+                     <a href="https://github.com/MariappanKesavan" target="_blank" title="GitHub"><i class="fab fa-github-square fa-2x"></i></a>
+                 </div>
              </div>
         </div>
     </section>
@@ -241,9 +276,49 @@
         </div>
     </footer>
 
-     <script>
-        // Smooth scrolling for anchor links, adjusted for fixed navbar
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    <script>
+        // --- JavaScript for Drawer Menu Functionality ---
+        const hamburgerIcon = document.querySelector('.hamburger-icon');
+        const closeDrawerButton = document.querySelector('.close-drawer');
+        const drawerMenu = document.querySelector('.drawer-menu');
+        const navLinks = document.querySelectorAll('.drawer-menu ul li a'); // Links INSIDE the drawer
+
+        // Function to open the drawer
+        function openDrawer() {
+            drawerMenu.classList.add('open');
+            // Optional: Add a class to the body to disable scrolling when drawer is open
+            document.body.classList.add('drawer-open');
+        }
+
+        // Function to close the drawer
+        function closeDrawer() {
+            drawerMenu.classList.remove('open');
+            // Optional: Remove the body class to re-enable scrolling
+            document.body.classList.remove('drawer-open');
+        }
+
+        // Event listeners
+        if (hamburgerIcon && drawerMenu && closeDrawerButton) {
+             hamburgerIcon.addEventListener('click', openDrawer);
+             closeDrawerButton.addEventListener('click', closeDrawer);
+
+             // Close drawer when a link inside the drawer is clicked
+             navLinks.forEach(link => {
+                 link.addEventListener('click', closeDrawer);
+             });
+
+             // Optional: Close drawer when clicking outside the drawer (if needed)
+             // window.addEventListener('click', (e) => {
+             //     if (!drawerMenu.contains(e.target) && !hamburgerIcon.contains(e.target) && drawerMenu.classList.contains('open')) {
+             //         closeDrawer();
+             //     }
+             // });
+        }
+
+
+        // --- Smooth scrolling for anchor links, adjusted for fixed navbar ---
+        // Select links in the drawer menu
+        document.querySelectorAll('.drawer-menu a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 if (this.getAttribute('href').length > 1) {
                     e.preventDefault();
@@ -264,9 +339,11 @@
             });
         });
 
-        // Optional: Add active class to navbar links on scroll
+
+        // --- Optional: Add active class to navbar links on scroll ---
+        // Select all relevant links in the drawer menu
         const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('#navbar a[href^="#"]');
+        const allNavLinks = document.querySelectorAll('#navbar .drawer-menu a[href^="#"]');
         const navbarHeight = document.getElementById('navbar').offsetHeight;
 
         window.addEventListener('scroll', () => {
@@ -281,7 +358,7 @@
                 }
             });
 
-            navLinks.forEach(link => {
+            allNavLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === current) {
                     link.classList.add('active');
