@@ -46,7 +46,7 @@
                 <div class="profile-text">
                     <p class="greeting">Hello, I'm</p>
                     <h1>Kesavan Mariappan</h1>
-                    <p class="title">DevOps Engineer</p>
+                    <p class="title">DevOps Engineer III</p>
                     <p class="tagline">Automating Infrastructure & CI/CD for Scalability and Reliability.</p>
                     <p class="hero-description">5 years of specialized DevOps experience with Kubernetes, Docker, Helm, Terraform, Jenkins, and GitHub Actions.</p>
                     </div>
@@ -58,7 +58,7 @@
         </div>
     </header>
 
-    <section id="about" class="section-padding">
+    <section id="about" class="section-padding animate-on-scroll">
         <div class="container">
             <h2 class="section-title">About Myself</h2>
             <p>
@@ -67,7 +67,7 @@
         </div>
     </section>
 
-    <section id="experience" class="section-padding section-bg">
+    <section id="experience" class="section-padding section-bg animate-on-scroll">
         <div class="container">
             <h2 class="section-title">Experience Overview</h2>
             <p class="experience-summary">
@@ -91,8 +91,7 @@
         </div>
     </section>
 
-
-    <section id="roles" class="section-padding">
+    <section id="roles" class="section-padding animate-on-scroll">
         <div class="container">
             <h2 class="section-title">Roles and Responsibilities</h2>
             <ul class="responsibility-list">
@@ -112,7 +111,7 @@
         </div>
     </section>
 
-    <section id="skills" class="section-padding section-bg">
+    <section id="skills" class="section-padding section-bg animate-on-scroll">
         <div class="container">
             <h2 class="section-title">Tools & Skillsets</h2>
 
@@ -184,7 +183,7 @@
         </div>
     </section>
 
-    <section id="projects" class="section-padding">
+    <section id="projects" class="section-padding animate-on-scroll">
         <div class="container">
             <h2 class="section-title">Recent Engagement Highlights</h2>
 
@@ -276,7 +275,7 @@
         </div>
     </section>
 
-    <section id="education" class="section-padding section-bg">
+    <section id="education" class="section-padding section-bg animate-on-scroll">
         <div class="container">
             <h2 class="section-title">Educational Background</h2>
             <div class="education-item">
@@ -287,7 +286,7 @@
         </div>
     </section>
 
-    <section id="strengths" class="section-padding">
+    <section id="strengths" class="section-padding animate-on-scroll">
         <div class="container">
             <h2 class="section-title">Key Strengths</h2>
             <ul class="strengths-list">
@@ -299,8 +298,7 @@
         </div>
     </section>
 
-
-    <section id="contact" class="section-padding section-bg">
+    <section id="contact" class="section-padding section-bg animate-on-scroll">
         <div class="container">
              <h2 class="section-title">Get In Touch</h2>
              <div class="contact-details">
@@ -364,4 +362,104 @@
 
 
         // --- Smooth scrolling for anchor links, adjusted for fixed navbar ---
-        // Select
+        // Select links in the drawer menu
+        document.querySelectorAll('.drawer-menu a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').length > 1) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    const navbarHeight = document.getElementById('navbar').offsetHeight;
+
+                    if (targetElement) {
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+
+        // --- Optional: Add active class to navbar links on scroll ---
+        // Select all relevant links in the drawer menu
+        const sections = document.querySelectorAll('section');
+        const allNavLinks = document.querySelectorAll('#navbar .drawer-menu a[href^="#"]');
+        const navbarHeight = document.getElementById('navbar').offsetHeight;
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const scrollY = window.pageYOffset + navbarHeight + 10;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    current = '#' + section.getAttribute('id');
+                }
+            });
+
+            allNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+         // Update body padding-top on window resize to adjust for navbar height changes
+        window.addEventListener('resize', () => {
+            document.body.style.paddingTop = document.getElementById('navbar').offsetHeight + 'px';
+        });
+
+        // Also call on load to set initial padding correctly
+        window.addEventListener('load', () => {
+            document.body.style.paddingTop = document.getElementById('navbar').offsetHeight + 'px';
+        });
+
+
+        // --- JavaScript for Scroll Animation ---
+        // Add this script block or integrate into existing script
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+
+            const isElementInViewport = (el, threshold = 0) => {
+                const rect = el.getBoundingClientRect();
+                // Check if the top of the element is within the viewport from the bottom edge up to the threshold
+                // AND the bottom of the element is within the viewport from the top edge down to the threshold.
+                // This ensures a portion of the element is visible within the threshold area.
+                return (
+                    rect.top <= (window.innerHeight - threshold) &&
+                    rect.bottom >= threshold
+                );
+            };
+
+            const handleScrollAnimation = () => {
+                elementsToAnimate.forEach((el) => {
+                    // Use a 100px threshold - element animates when at least 100px of it is visible from the top or bottom of the viewport.
+                    // Adjust the threshold value (e.g., 50, 150) to control when the animation triggers.
+                    if (isElementInViewport(el, 100)) {
+                        el.classList.add('is-visible');
+                    } else {
+                        // Optional: Remove class when out of view to re-animate on scroll back
+                        // el.classList.remove('is-visible');
+                    }
+                });
+            };
+
+            // Run on scroll and resize
+            window.addEventListener('scroll', handleScrollAnimation);
+            window.addEventListener('resize', handleScrollAnimation);
+
+            // Run on initial load to animate elements already in view
+            handleScrollAnimation();
+        });
+
+    </script>
+</body>
+</html>
