@@ -47,11 +47,12 @@
                     <p class="greeting">Hello, I'm</p>
                     <h1>Kesavan Mariappan</h1>
                     <p class="title">DevOps Engineer III</p>
-                    <p class="tagline">DevOps Engineer with 5yrs experience specializing in Kubernetes, Docker, Helm, Terraform, Jenkins, and Github Actions.</p>
-                    <div class="hero-buttons">
+                    <p class="tagline">Automating Infrastructure & CI/CD for Scalability and Reliability.</p>
+                    <p class="hero-description">5 years of specialized DevOps experience with Kubernetes, Docker, Helm, Terraform, Jenkins, and GitHub Actions.</p>
+                    </div>
+                <div class="hero-buttons">
                          <a href="#about" class="btn btn-primary">Learn More About Me</a>
                          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -189,7 +190,8 @@
 
             <div class="project-item">
                 <h3>Project 1: ElasticSearch</h3>
-                <p class="project-meta"><i class="fas fa-cloud"></i> Cloud: AWS, Azure, Digital Ocean</p> <p class="project-meta"><i class="fas fa-code"></i> Environment: Linux</p>
+                <p class="project-meta"><i class="fas fa-cloud"></i> Cloud: AWS, Azure, Digital Ocean</p>
+                <p class="project-meta"><i class="fas fa-code"></i> Environment: Linux</p>
                 <p class="project-responsibilities-title">Responsibilities:</p>
                 <ul class="project-responsibilities">
                     <li>Dockerizing the microservices and managing their deployment within the Kubernetes cluster.</li>
@@ -215,7 +217,8 @@
 
             <div class="project-item">
                 <h3>Project 2: JobPortal</h3>
-                 <p class="project-meta"><i class="fas fa-cloud"></i> Cloud: AWS</p> <p class="project-meta"><i class="fas fa-code"></i> Environment: Linux</p>
+                 <p class="project-meta"><i class="fas fa-cloud"></i> Cloud: AWS</p>
+                 <p class="project-meta"><i class="fas fa-code"></i> Environment: Linux</p>
                  <p class="project-responsibilities-title">Responsibilities:</p>
                 <ul class="project-responsibilities">
                      <li>Migrated Non-prod environment from a AWS Account to another.</li>
@@ -246,7 +249,8 @@
 
             <div class="project-item">
                 <h3>Project 3: Chrome Plugin</h3>
-                <p class="project-meta"><i class="fas fa-cloud"></i> Cloud: Azure</p> <p class="project-meta"><i class="fas fa-code"></i> Environment: Linux</p>
+                <p class="project-meta"><i class="fas fa-cloud"></i> Cloud: Azure</p>
+                <p class="project-meta"><i class="fas fa-code"></i> Environment: Linux</p>
                 <p class="project-responsibilities-title">Responsibilities:</p>
                 <ul class="project-responsibilities">
                      <li>Creating Staging and Production environment in Azure cloud.</li>
@@ -360,65 +364,4 @@
 
 
         // --- Smooth scrolling for anchor links, adjusted for fixed navbar ---
-        // Select links in the drawer menu
-        document.querySelectorAll('.drawer-menu a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if (this.getAttribute('href').length > 1) {
-                    e.preventDefault();
-
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    const navbarHeight = document.getElementById('navbar').offsetHeight;
-
-                    if (targetElement) {
-                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-
-
-        // --- Optional: Add active class to navbar links on scroll ---
-        // Select all relevant links in the drawer menu
-        const sections = document.querySelectorAll('section');
-        const allNavLinks = document.querySelectorAll('#navbar .drawer-menu a[href^="#"]');
-        const navbarHeight = document.getElementById('navbar').offsetHeight;
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const scrollY = window.pageYOffset + navbarHeight + 10;
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                    current = '#' + section.getAttribute('id');
-                }
-            });
-
-            allNavLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-         // Update body padding-top on window resize to adjust for navbar height changes
-        window.addEventListener('resize', () => {
-            document.body.style.paddingTop = document.getElementById('navbar').offsetHeight + 'px';
-        });
-
-        // Also call on load to set initial padding correctly
-        window.addEventListener('load', () => {
-            document.body.style.paddingTop = document.getElementById('navbar').offsetHeight + 'px';
-        });
-
-    </script>
-</body>
-</html>
+        // Select
