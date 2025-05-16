@@ -202,6 +202,11 @@ a:hover {
     line-height: 1.8;
 }
 
+.hero-buttons .btn {
+    position: relative; /* Needed for z-index to work */
+    z-index: 10; /* Give it a z-index higher than potential overlapping elements */
+}
+
 .hero-buttons {
     margin-top: 30px;
     display: flex;
