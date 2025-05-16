@@ -1,539 +1,304 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>MeetMe Personal</title>
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="vendors/linericon/style.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
-        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
-        <link rel="stylesheet" href="vendors/animate-css/animate.css">
-        <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
-        <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
-        <!-- main css -->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
-    </head>
-    <body>
-        
-        <!--================Header Menu Area =================-->
-        <header class="header_area">
-            <div class="main_menu">
-            	<nav class="navbar navbar-expand-lg navbar-light">
-					<div class="container box_1620">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-							<ul class="nav navbar-nav menu_nav ml-auto">
-								<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
-								<li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li> 
-								<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li> 
-								<li class="nav-item submenu dropdown">
-									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-										<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-									</ul>
-								</li> 
-								<!-- <li class="nav-item submenu dropdown">
-									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-										<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-									</ul>
-								</li>  -->
-								<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-							</ul>
-						</div> 
-					</div>
-            	</nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kesavan Mariappan - DevOps Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="portfolio-theme">
+
+    <nav id="navbar">
+        <div class="container">
+            <h1><a href="#">Kesavan M.</a></h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li> <li><a href="#roles">Roles</a></li>
+                <li><a href="#skills">Skills</a></li>
+                 <li><a href="#projects">Projects</a></li> <li><a href="#education">Education</a></li> <li><a href="#strengths">Strengths</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-text">
+                    <p class="greeting">Hello, I'm</p>
+                    <h1>Kesavan Mariappan</h1>
+                    <p class="title">DevOps Engineer III</p>
+                    <p class="tagline">DevOps Engineer with 4.5yrs experience specializing in Kubernetes, Docker, Helm, Terraform, Jenkins, and Github Actions.</p>
+                    <div class="hero-buttons">
+                         <a href="#about" class="btn btn-primary">Learn More About Me</a>
+                         <a href="mailto:mkesavan170@gmail.com" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
             </div>
-        </header>
-        <!--================Header Menu Area =================-->
-        
-        <!--================Home Banner Area =================-->
-        <section class="home_banner_area">
-           	<div class="container box_1620">
-           		<div class="banner_inner d-flex align-items-center">
-					<div class="banner_content">
-						<div class="media">
-							<div class="d-flex">
-								<img src="img/personal.jpg" alt="">
-							</div>
-							<div class="media-body">
-								<div class="personal_text">
-									<h3>Kesavan Mariappan</h3>
-									<h4>DevOps Engineer III</h4>
-									<p>DevOps Engineer with 3yrs experience specializing in Kubernetes, Docker, Helm, Terraform, Jenkins, and Github Actions. 🚀 #DevOps</p>
-									<ul class="list basic_info">
-										<li><a href="#"><i class="lnr lnr-calendar-full"></i> 17th November, 1997</a></li>
-										<li><a href="#"><i class="lnr lnr-phone-handset"></i> +91 9566856628</a></li>
-										<li><a href="#"><i class="lnr lnr-envelope"></i> mkesavan170@gmail.com</a></li>
-										<li><a href="#"><i class="lnr lnr-home"></i> Eral, Tamil Nadu, 628802</a></li>
-									</ul>
-									<ul class="list personal_social">										
-										<li><a href="www.facebook.com/K7.Mariappan?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a></li>										
-										<li><a href="https://www.linkedin.com/in/kesavan-mariappan-20b75b202/"><i class="fa fa-linkedin"></i></a></li>
-										<li><a href="https://www.instagram.com/_kesavan_mariappan_/"><i class="fa fa-instagram"></i></a></li>
-										<li><a href="https://medium.com/@mkesavan170"><i class="fa fa-medium"></i></a></li>
-										<li><a href="https://github.com/kesavan-mariappan"><i class="fa fa-github"></i></a></li>
-										<!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+        </div>
+    </header>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">About Myself</h2>
+            <p>
+                I'm a seasoned DevOps engineer with over four years of experience dedicated to transforming development and IT operations. My specialization is in the art of Automation, where I orchestrate processes, design faultless continuous integration and deployment pipelines, and fine-tune infrastructure for optimal efficiency. I have an intense drive to create solutions that are not only dependable but also easily scalable. Through my work, I hope to foster a dynamic, agile workplace in which the gap between development and operations is effortlessly bridged.
+            </p>
+        </div>
+    </section>
+
+    <section id="experience" class="section-padding section-bg">
+        <div class="container">
+            <h2 class="section-title">Experience Overview</h2>
+            <p class="experience-summary">
+               <i class="fas fa-briefcase"></i> 3.9 years of IT experience as DevOps engineer on various projects with a wide variety of DevOps tools on Linux environment.
+            </p>
+            <ul class="experience-list">
+                <li>Hands on experience in containerization tool (Docker) and orchestration tools such as Kubernetes (EKS and AKS).</li>
+                <li>Hands on experience in IaC (Terraform).</li>
+                <li>Hands on experience in scripting language (Bash).</li>
+                <li>Hands on experience in Load Testing tool (JMeter).</li>
+                <li>Hands on experience in open source CI/CD tools such as Jenkins, Github Action and Gitlab CICD.</li>
+                <li>Hands on experience in Helm Chart.</li>
+                <li>Experience in Source Code Analysis tool (SonarQube).</li>
+                <li>Experience in build tool (maven, npm).</li>
+                <li>Hands on experience in Version Control System (Git).</li>
+                <li>Hands on experience in Repository Management tool (Github, Bitbucket and GitLab).</li>
+                <li>Possess knowledge on Project Management and Requirement Management tools (Jira, Confluence).</li>
+                <li>Hands on experience in AWS services – IAM, EC2, S3, VPC, Route 53, Lambda, EKS, CloudWatch, RDS, ECS, CloudFront, AWS amplify.</li>
+                <li>Hands on experience in Azure services – Azure API Management, AKS, Azure Grafana, Azure Monitoring, Azure VM, Azure Storage Account, Azure Application availability.</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section id="roles" class="section-padding"> <div class="container">
+            <h2 class="section-title">Roles and Responsibilities</h2>
+            <ul class="responsibility-list">
+                <li>Developing and executing robust CI/CD pipelines.</li>
+                <li>Managing multi-cloud setups including AWS and Azure and Digital Ocean.</li>
+                <li>Strong understanding on data encryption and dynamic data masking and query editor and auditing as well.</li>
+                <li>Optimizing system performance and ensuring the smooth integration of development and operations.</li>
+                <li>Deploying, automating and maintaining reliable infrastructure solutions and Orchestrating the creation and deployment of Kubernetes cluster (EKS or AKS).</li>
+                <li>Dockerizing the microservices and managing their deployment within the Kubernetes cluster.</li>
+                <li>Integrating code scanning tools like SonarQube into the CI/CD pipeline to enhance code quality and security measures.</li>
+                <li>Creating and maintaining the deployment scripts.</li>
+                <li>Implementing automatic database backup procedures and scheduling jobs for application deployment.</li>
+                <li>Conducting load tests using JMeter and monitoring infrastructure performance.</li>
+                <li>Configuring the monitoring tools like Grafana.</li>
+                <li>Supporting the deployment of software solutions and managing post deployment operations.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills" class="section-padding section-bg"> <div class="container">
+            <h2 class="section-title">Tools & Skillsets</h2> <ul class="skills-list">
+                <li><i class="fab fa-git-alt"></i> Git</li> <li><i class="fab fa-github"></i> Github</li>
+                 <li><i class="fab fa-bitbucket"></i> Bitbucket</li> <li><i class="fas fa-server"></i> Maven</li> <li><i class="fab fa-npm"></i> NPM</li> <li><i class="fab fa-jenkins"></i> Jenkins</li>
+                <li><i class="fab fa-github-alt"></i> GitHub Actions</li> <li><i class="fab fa-gitlab"></i> GitLab CICD</li> <li><i class="fab fa-kubernetes"></i> Kubernetes</li>
+                <li><i class="fab fa-docker"></i> Docker</li>
+                 <li><i class="fas fa-chart-line"></i> Grafana</li>
+                <li><i class="fas fa-broadcast-tower"></i> Prometheus</li> <li><i class="fab fa-aws"></i> AWS Services</li> <li><i class="fab fa-azure"></i> Azure Services</li> <li><i class="fas fa-cloud"></i> Terraform</li>
+                 <li><i class="fas fa-ship"></i> Helm</li>
+                  <li><i class="fas fa-bug-slash"></i> SonarQube</li>
+                  <li><i class="fas fa-tachometer-alt"></i> JMeter</li>
+                   <li><i class="fas fa-terminal"></i> Bash Scripting</li> <li><i class="fas fa-project-diagram"></i> Jira</li> <li><i class="fas fa-book"></i> Confluence</li> </ul>
+        </div>
+    </section>
+
+    <section id="projects" class="section-padding"> <div class="container">
+            <h2 class="section-title">Recent Engagement Highlights</h2>
+
+            <div class="project-item">
+                <h3>Project 1: SmartSearch</h3>
+                <p class="project-meta"><i class="fas fa-code"></i> Environment: Linux</p>
+                <p class="project-responsibilities-title">Responsibilities:</p>
+                <ul class="project-responsibilities">
+                    <li>Dockerizing the microservices and managing their deployment within the Kubernetes cluster.</li>
+                    <li>Supporting the deployment of software solutions and managing post deployment operations.</li>
+                    <li>Integrating code scanning tools like SonarQube into the CI/CD pipeline to enhance code quality and security measures.</li>
+                    <li>Managing multi-cloud setups including AWS and Azure and Digital Ocean.</li>
+                </ul>
+                 <p class="project-meta"><i class="fas fa-tools"></i> Tools Used:</p>
+                 <ul class="project-tools-list">
+                     <li>GitHub</li>
+                     <li>Jenkins</li>
+                     <li>SonarQube</li>
+                     <li>Maven</li>
+                     <li>NPM</li>
+                     <li>Docker</li>
+                     <li>EKS</li>
+                     <li>Terraform</li>
+                     <li>Helm Chart</li>
+                     <li>AWS</li>
+                     <li>Digital Ocean</li>
+                 </ul>
             </div>
-        </section>
-        <!--================End Home Banner Area =================-->
-        
-        <!--================Welcome Area =================-->
-        <section class="welcome_area p_120">
-        	<div class="container">
-        		<div class="row welcome_inner">
-        			<div class="col-lg-6">
-        				<div class="welcome_text">
-        					<h4>About Myself</h4>
-        					<p>I'm a seasoned DevOps engineer with a three-year experience dedicated to changing development and IT operations. My specialization is in the art of Automation , where I orchestrate processes, design faultless continuous integration and deployment pipelines, and fine-tune infrastructure for optimal efficiency. I have an intense drive to create solutions that are not only dependable but also easily scalable. Through my work, I hope to foster a dynamic, agile workplace in which the gap between development and operations is effortlessly bridged.</p>
-        					<div class="row">
-        						<div class="col-md-4">
-        							<div class="wel_item">
-        								<i class="lnr lnr-database"></i>
-        								<h4>3 Years</h4>
-        								<p>experience</p>
-        							</div>
-        						</div>
-        						<div class="col-md-4">
-        							<div class="wel_item">
-        								<i class="lnr lnr-book"></i>
-        								<h4>10</h4>
-        								<p>Total Projects</p>
-        							</div>
-        						</div>
-        						<div class="col-md-4">
-        							<div class="wel_item">
-        								<i class="lnr lnr-users"></i>
-        								<h4>B.E</h4>
-        								<p>Degree</p>
-        							</div>
-        						</div>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-6">
-        				<div class="tools_expert">
-        					<div class="skill_main">
-								<div class="skill_item">
-									<h4>Automation <span class="counter">85</span>%</h4>
-									<div class="progress_br">
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-								</div>
-								<div class="skill_item">
-									<h4>Terraform <span class="counter">60</span>%</h4>
-									<div class="progress_br">
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-								</div>
-								<div class="skill_item">
-									<h4>Jenkins <span class="counter">70</span>%</h4>
-									<div class="progress_br">
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-								</div>
-								<div class="skill_item">
-									<h4>Bash Scripting <span class="counter">95</span>%</h4>
-									<div class="progress_br">
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-								</div>
-								<div class="skill_item">
-									<h4>AWS <span class="counter">65</span>%</h4>
-									<div class="progress_br">
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        </section>
-        <!--================End Welcome Area =================-->
-        
-        <!--================My Tabs Area =================-->
-        <section class="mytabs_area p_120">
-        	<div class="container">
-        		<div class="tabs_inner">
-					<ul class="nav nav-tabs" id="myTab" role="tablist">
-						<li class="nav-item">
-							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Experiences</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Education</a>
-						</li>
-					</ul>
-					<div class="tab-content" id="myTabContent">
-						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-							<ul class="list">
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>March 2017 to present</p>
-										</div>
-										<div class="media-body">
-											<h4>Colorlib</h4>
-											<p>Senior Web Developer <br />Santa monica, Los angeles</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>March 2017 to present</p>
-										</div>
-										<div class="media-body">
-											<h4>Colorlib</h4>
-											<p>Senior Web Developer <br />Santa monica, Los angeles</p>
-										</div>
-									</div>
-								</li>
-								<li>
-								<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>March 2017 to present</p>
-										</div>
-										<div class="media-body">
-											<h4>Colorlib</h4>
-											<p>Senior Web Developer <br />Santa monica, Los angeles</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-							<ul class="list">
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>March 2017 to present</p>
-										</div>
-										<div class="media-body">
-											<h4>Colorlib</h4>
-											<p>Senior Web Developer <br />Santa monica, Los angeles</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>March 2017 to present</p>
-										</div>
-										<div class="media-body">
-											<h4>Colorlib</h4>
-											<p>Senior Web Developer <br />Santa monica, Los angeles</p>
-										</div>
-									</div>
-								</li>
-								<li>
-								<span></span>
-									<div class="media">
-										<div class="d-flex">
-											<p>March 2017 to present</p>
-										</div>
-										<div class="media-body">
-											<h4>Colorlib</h4>
-											<p>Senior Web Developer <br />Santa monica, Los angeles</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-        		</div>
-        	</div>
-        </section>
-        <!--================End My Tabs Area =================-->
-        
-        <!--================Feature Area =================-->
-        <section class="feature_area p_120">
-        	<div class="container">
-        		<div class="main_title">
-        			<h2>offerings to my clients</h2>
-        			<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.</p>
-        		</div>
-        		<div class="feature_inner row">
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-        					<i class="flaticon-city"></i>
-        					<h4>Architecture</h4>
-        					<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $17 each.</p>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-        					<i class="flaticon-skyline"></i>
-        					<h4>Interior Design</h4>
-        					<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $17 each.</p>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-        					<i class="flaticon-sketch"></i>
-        					<h4>Concept Design</h4>
-        					<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $17 each.</p>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        </section>
-        <!--================End Feature Area =================-->
-        
-        <!--================Home Gallery Area =================-->
-        <section class="home_gallery_area p_120">
-        	<div class="container">
-        		<div class="main_title">
-        			<h2>Our Latest Featured Projects</h2>
-        			<p>Who are in extremely love with eco friendly system.</p>
-        		</div>
-        		<div class="isotope_fillter">
-        			<ul class="gallery_filter list">
-						<li class="active" data-filter="*"><a href="#">All</a></li>
-						<li data-filter=".brand"><a href="#">Vector</a></li>
-						<li data-filter=".manipul"><a href="#">Raster</a></li>
-						<li data-filter=".creative"><a href="#">UI/UX</a></li>
-						<li data-filter=".design"><a href="#">Printing</a></li>
-					</ul>
-        		</div>
-        	</div>
-        	<div class="container">
-        		<div class="gallery_f_inner row imageGallery1">
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul design print">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-1.jpg" alt="">
-        						<a class="light" href="img/gallery/project-1.jpg"><img src="img/gallery/icon.png" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>3D Helmet Design</h4>
-        						<p>Client Project</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul creative">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-2.jpg" alt="">
-        						<a class="light" href="img/gallery/project-2.jpg"><img src="img/gallery/icon.png" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>2D Vinyl Design</h4>
-        						<p>Client Project</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 manipul creative design print">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-3.jpg" alt="">
-        						<a class="light" href="img/gallery/project-3.jpg"><img src="img/gallery/icon.png" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>Creative Poster Design</h4>
-        						<p>Client Project</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand creative print">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-4.jpg" alt="">
-        						<a class="light" href="img/gallery/project-4.jpg"><img src="img/gallery/icon.png" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>Embosed Logo Design</h4>
-        						<p>Client Project</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand manipul design">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-5.jpg" alt="">
-        						<a class="light" href="img/gallery/project-5.jpg"><img src="img/gallery/icon.png" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>3D Disposable Bottle</h4>
-        						<p>Client Project</p>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-4 col-sm-6 brand creative">
-        				<div class="h_gallery_item">
-        					<div class="g_img_item">
-        						<img class="img-fluid" src="img/gallery/project-6.jpg" alt="">
-        						<a class="light" href="img/gallery/project-6.jpg"><img src="img/gallery/icon.png" alt=""></a>
-        					</div>
-        					<div class="g_item_text">
-        						<h4>3D Logo Design</h4>
-        						<p>Client Project</p>
-        					</div>
-        				</div>
-        			</div>
-        		</div>
-        		<div class="more_btn">
-        			<a class="main_btn" href="#">Load More Items</a>
-        		</div>
-        	</div>
-        </section>
-        <!--================End Home Gallery Area =================-->
-        
-        <!--================Testimonials Area =================-->
-        <section class="testimonials_area p_120">
-        	<div class="container">
-        		<div class="main_title">
-        			<h2>Testimonials</h2>
-        			<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.</p>
-        		</div>
-        		<div class="testi_inner">
-					<div class="testi_slider owl-carousel">
-						<div class="item">
-							<div class="testi_item">
-								<p>As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel across her face</p>
-								<h4>Fanny Spencer</h4>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star-half-o"></i></a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testi_item">
-								<p>As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel across her face</p>
-								<h4>Fanny Spencer</h4>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star-half-o"></i></a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testi_item">
-								<p>As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel across her face</p>
-								<h4>Fanny Spencer</h4>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star-half-o"></i></a>
-							</div>
-						</div>
-					</div>
-        		</div>
-        	</div>
-        </section>
-        <!--================End Testimonials Area =================-->
-        
-        <!--================Footer Area =================-->
-        <footer class="footer_area p_120">
-        	<div class="container">
-        		<div class="row footer_inner">
-        			<div class="col-lg-5 col-sm-6">
-        				<aside class="f_widget ab_widget">
-        					<div class="f_title">
-        						<h3>About Me</h3>
-        					</div>
-        					<p>Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills,</p>
-        					
-        				</aside>
-        			</div>
-        			<div class="col-lg-5 col-sm-6">
-        				<aside class="f_widget news_widget">
-        					<div class="f_title">
-        						<h3>Newsletter</h3>
-        					</div>
-        					<p>Stay updated with our latest trends</p>
-        					<div id="mc_embed_signup">
-                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
-                                	<div class="input-group d-flex flex-row">
-                                        <input name="EMAIL" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
-                                        <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>		
-                                    </div>				
-                                    <div class="mt-10 info"></div>
-                                </form>
-                            </div>
-        				</aside>
-        			</div>
-        			<div class="col-lg-2">
-        				<aside class="f_widget social_widget">
-        					<div class="f_title">
-        						<h3>Follow Me</h3>
-        					</div>
-        					<p>Let us be social</p>
-        					<ul class="list">
-        						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-        						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-        						<li><a href="#"><i class="fa fa-behance"></i></a></li>
-        					</ul>
-        				</aside>
-        			</div>
-        		</div>
-        	</div>
-        </footer>
-        <!--================End Footer Area =================-->
-        
-        
-        
-        
-        
-        
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/popper.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/stellar.js"></script>
-        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
-        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
-        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
-        <script src="vendors/isotope/isotope.pkgd.min.js"></script>
-        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-        <script src="vendors/popup/jquery.magnific-popup.min.js"></script>
-        <script src="js/jquery.ajaxchimp.min.js"></script>
-        <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
-        <script src="vendors/counter-up/jquery.counterup.min.js"></script>
-        <script src="js/mail-script.js"></script>
-        <script src="js/theme.js"></script>
-    </body>
+
+            <div class="project-item">
+                <h3>Project 2: PluginLive</h3>
+                 <p class="project-meta"><i class="fas fa-code"></i> Environment: Linux</p>
+                 <p class="project-responsibilities-title">Responsibilities:</p>
+                <ul class="project-responsibilities">
+                     <li>Migrated Non-prod environment from a AWS Account to another.</li>
+                     <li>Orchestrated EKS Cluster creation and deployment of production environment microservices, ensuring seamless operations.</li>
+                </ul>
+                <p class="project-meta"><i class="fas fa-tools"></i> AWS Services Used:</p>
+                 <ul class="project-tools-list">
+                     <li>EKS</li>
+                     <li>Lambda</li>
+                     <li>RDS</li>
+                     <li>VPC</li>
+                     <li>S3</li>
+                     <li>CloudFront</li>
+                     <li>Route53</li>
+                     <li>EC2</li>
+                     <li>ECR</li>
+                 </ul>
+                 <p class="project-meta"><i class="fas fa-tools"></i> Other Tools & Technologies:</p>
+                 <ul class="project-tools-list">
+                    <li>React JS</li>
+                    <li>NodeJS</li>
+                    <li>Docker</li>
+                    <li>GitHub Actions</li>
+                    <li>Sonarqube</li>
+                    <li>ECR</li> <li>GitHub</li>
+                 </ul>
+            </div>
+
+            <div class="project-item">
+                <h3>Project 3: Compass API</h3>
+                <p class="project-meta"><i class="fas fa-code"></i> Environment: Linux</p>
+                <p class="project-responsibilities-title">Responsibilities:</p>
+                <ul class="project-responsibilities">
+                     <li>Creating Staging and Production environment in Azure cloud.</li>
+                     <li>Dockerizing the springboot microservices and managing the containers in AKS Cluster.</li>
+                     <li>Bash Scripting for automated database backup to Azure Storage Account.</li>
+                     <li>Configuring all the Rest API in Azure API Management with enabled rate limiting.</li>
+                     <li>Monitoring: Prometheus, Grafana, Azure LogAnalytics, Azure Application availability.</li>
+                </ul>
+                <p class="project-meta"><i class="fas fa-tools"></i> Tools & Technologies:</p>
+                 <ul class="project-tools-list">
+                     <li>Azure API Management</li>
+                     <li>AKS</li>
+                     <li>Prometheus</li>
+                     <li>Grafana</li>
+                     <li>Azure LogAnalytics</li>
+                     <li>Azure Application availability</li>
+                     <li>Docker</li>
+                     <li>Bash Scripting</li>
+                     <li>Springboot (Implied by context)</li>
+                 </ul>
+            </div>
+
+        </div>
+    </section>
+
+     <section id="education" class="section-padding section-bg"> <div class="container">
+            <h2 class="section-title">Educational Background</h2>
+            <div class="education-item">
+                <h3>Bachelor of Engineering (B.E) in Computer Science and Engineering (CSE)</h3>
+                <p><i class="fas fa-university"></i> Dr. G.U. Pope Colloge of Engineering, Anna University</p>
+                <p><i class="fas fa-percent"></i> CGPA: 6.6</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="strengths" class="section-padding"> <div class="container">
+            <h2 class="section-title">Key Strengths</h2>
+            <ul class="strengths-list">
+                <li>Skilled in managing multi-cloud setups including AWS, Azure, and Digital Ocean.</li>
+                <li>Capability to manage teams and handle client calls.</li>
+                <li>Proficient in building and managing robust CI/CD Pipelines.</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section id="contact" class="section-padding section-bg"> <div class="container">
+             <h2 class="section-title">Get In Touch</h2>
+             <div class="contact-details">
+                 <p><i class="fas fa-phone-alt"></i> Phone: +91 9566856628</p>
+                 <p><i class="fas fa-envelope"></i> Email: <a href="mailto:mkesavan170@gmail.com">mkesavan170@gmail.com</a></p>
+                 <p><i class="fas fa-map-marker-alt"></i> Location: Eral, Tamil Nadu, 628802</p>
+                 <div class="social-links">
+                     <a href="https://www.linkedin.com/in/kesavan-mariappan-20b75b202/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+                     <a href="https://github.com/kesavan-mariappan" target="_blank" title="GitHub"><i class="fab fa-github-square fa-2x"></i></a>
+                     </div>
+             </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Kesavan Mariappan. All rights reserved.</p>
+            <p>Designed and Developed with &#x2764;</p>
+        </div>
+    </footer>
+
+     <script>
+        // Smooth scrolling for anchor links, adjusted for fixed navbar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').length > 1) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    const navbarHeight = document.getElementById('navbar').offsetHeight;
+
+                    if (targetElement) {
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Optional: Add active class to navbar links on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('#navbar a[href^="#"]');
+        const navbarHeight = document.getElementById('navbar').offsetHeight;
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const scrollY = window.pageYOffset + navbarHeight + 10;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    current = '#' + section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+         // Update body padding-top on window resize to adjust for navbar height changes
+        window.addEventListener('resize', () => {
+            document.body.style.paddingTop = document.getElementById('navbar').offsetHeight + 'px';
+        });
+
+        // Also call on load to set initial padding correctly
+        window.addEventListener('load', () => {
+            document.body.style.paddingTop = document.getElementById('navbar').offsetHeight + 'px';
+        });
+
+    </script>
+</body>
 </html>
