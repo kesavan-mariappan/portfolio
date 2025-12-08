@@ -171,35 +171,37 @@ const Portfolio = () => {
           </motion.button>
         </div>
 
-        {/* Mobile Menu Overlay */}
-        <motion.div
-          initial={false}
-          animate={mobileMenuOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: '100%' }}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className={`md:hidden fixed inset-x-0 top-[65px] bottom-0 bg-black/95 backdrop-blur-xl z-40 ${mobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
-        >
-          <div className="flex flex-col items-center pt-16 space-y-8">
-            {['About', 'Experience', 'Projects', 'Tech', 'Contact'].map((item, i) => (
-              <motion.button
-                key={item}
-                onClick={() => {
-                  scrollToSection(item.toLowerCase());
-                  setMobileMenuOpen(false);
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={mobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ delay: mobileMenuOpen ? i * 0.1 : 0 }}
-                whileHover={{ scale: 1.1, color: '#22d3ee' }}
-                whileTap={{ scale: 0.95 }}
-                className={`text-2xl font-medium ${activeSection === item.toLowerCase() ? 'text-cyan-400' : 'text-gray-300'
-                  } hover:text-cyan-400 transition-colors`}
-              >
-                {item}
-              </motion.button>
-            ))}
-          </div>
-        </motion.div>
+
       </motion.nav>
+
+      {/* Mobile Menu Overlay */}
+      <motion.div
+        initial={false}
+        animate={mobileMenuOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: '100%' }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        className={`md:hidden fixed inset-x-0 top-[65px] bottom-0 z-40 bg-black/80 backdrop-blur-md ${mobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
+      >
+        <div className="flex flex-col items-center pt-16 space-y-8">
+          {['About', 'Experience', 'Projects', 'Tech', 'Contact'].map((item, i) => (
+            <motion.button
+              key={item}
+              onClick={() => {
+                scrollToSection(item.toLowerCase());
+                setMobileMenuOpen(false);
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={mobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: mobileMenuOpen ? i * 0.1 : 0 }}
+              whileHover={{ scale: 1.1, color: '#22d3ee' }}
+              whileTap={{ scale: 0.95 }}
+              className={`text-2xl font-medium ${activeSection === item.toLowerCase() ? 'text-cyan-400' : 'text-white'
+                } hover:text-cyan-400 transition-colors`}
+            >
+              {item}
+            </motion.button>
+          ))}
+        </div>
+      </motion.div>
 
       {/* Hero Section */}
       <motion.section
