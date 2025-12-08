@@ -4,6 +4,7 @@ import heroImage from './assets/kesavan-m-hero-image.png';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('hero');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll();
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
@@ -114,10 +115,13 @@ const Portfolio = () => {
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.3 }}
             className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent cursor-pointer"
+            onClick={() => scrollToSection('hero')}
           >
             KM
           </motion.div>
-          <div className="flex gap-8">
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-8">
             {['About', 'Experience', 'Projects', 'Tech', 'Contact'].map((item, i) => (
               <motion.button
                 key={item}
@@ -145,7 +149,56 @@ const Portfolio = () => {
               </motion.button>
             ))}
           </div>
+
+          {/* Mobile Hamburger Button */}
+          <motion.button
+            className="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            whileTap={{ scale: 0.9 }}
+          >
+            <motion.span
+              animate={mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+              className="block w-6 h-0.5 bg-cyan-400 transition-transform"
+            />
+            <motion.span
+              animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+              className="block w-6 h-0.5 bg-cyan-400"
+            />
+            <motion.span
+              animate={mobileMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+              className="block w-6 h-0.5 bg-cyan-400 transition-transform"
+            />
+          </motion.button>
         </div>
+
+        {/* Mobile Menu Overlay */}
+        <motion.div
+          initial={false}
+          animate={mobileMenuOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: '100%' }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          className={`md:hidden fixed inset-x-0 top-[65px] bottom-0 bg-black/95 backdrop-blur-xl z-40 ${mobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
+        >
+          <div className="flex flex-col items-center pt-16 space-y-8">
+            {['About', 'Experience', 'Projects', 'Tech', 'Contact'].map((item, i) => (
+              <motion.button
+                key={item}
+                onClick={() => {
+                  scrollToSection(item.toLowerCase());
+                  setMobileMenuOpen(false);
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={mobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ delay: mobileMenuOpen ? i * 0.1 : 0 }}
+                whileHover={{ scale: 1.1, color: '#22d3ee' }}
+                whileTap={{ scale: 0.95 }}
+                className={`text-2xl font-medium ${activeSection === item.toLowerCase() ? 'text-cyan-400' : 'text-gray-300'
+                  } hover:text-cyan-400 transition-colors`}
+              >
+                {item}
+              </motion.button>
+            ))}
+          </div>
+        </motion.div>
       </motion.nav>
 
       {/* Hero Section */}
@@ -390,7 +443,7 @@ const Portfolio = () => {
                   key={index}
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: false, amount: 0.8 }}
+                  viewport={{ once: false, amount: 0.2 }}
                   transition={{
                     duration: 0.6,
                     delay: index * 0.2 + 0.4,
@@ -903,24 +956,22 @@ const Portfolio = () => {
 };
 
 const Section = ({ id, title, children, dark }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
-
   return (
     <section
       id={id}
-      ref={ref}
-      className={`min-h-screen py-20 px-6 ${dark ? 'bg-gradient-to-b from-black to-gray-900' : ''}`}
+      className={`min-h-screen py-20 px-6 relative z-10 ${dark ? 'bg-gradient-to-b from-black to-gray-900' : ''}`}
     >
       <motion.div
         className="max-w-7xl mx-auto"
         initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.8 }}
       >
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-5xl md:text-7xl font-bold mb-16 text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
         >
@@ -933,14 +984,11 @@ const Section = ({ id, title, children, dark }) => {
 };
 
 const AnimatedCard = ({ children, delay = 0 }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
-
   return (
     <motion.div
-      ref={ref}
       initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
