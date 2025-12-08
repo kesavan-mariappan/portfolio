@@ -1,55 +1,100 @@
-# Hi 👋, I'm Kesavan Mariappan
+# Kesavan Mariappan - Portfolio
 
-DevOps Engineer with 5 years of experience specializing in AWS, Azure, Kubernetes, Docker, Helm, Terraform, Jenkins, GitLab, and GitHub Actions. 🚀 Passionate about automating and optimizing mission-critical deployments. #DevOps
+<div align="center">
 
-![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)
-![GitHub followers](https://img.shields.io/github/followers/kesavan-mariappan?style=social)
-![Twitter Follow](https://img.shields.io/twitter/follow/kesavan_m?style=social)
+![Portfolio Preview](https://img.shields.io/badge/Portfolio-Live-cyan?style=for-the-badge&logo=react)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38B2AC?style=flat-square&logo=tailwind-css)
 
-## Table of Contents
-- [About Me](#about-me)
-- [Languages and Tools](#-languages-and-tools-i-use)
-- [Contact Me](#-where-to-find-me)
-- [GitHub Stats](#-github-stats)
+**Senior Associate Consultant | DevOps Engineer | Cloud Infrastructure Specialist**
 
-## About Me
-I am a seasoned DevOps Engineer with extensive experience in creating and managing scalable, reliable, and secure cloud infrastructure. My expertise lies in leveraging a wide array of tools and technologies to streamline CI/CD pipelines and enhance operational efficiency.
+[🌐 Live Demo](https://kesavan-mariappan.github.io/kesavan-mariappan/) • [💼 LinkedIn](https://linkedin.com/in/kesavan-mariappan) • [📧 Contact](mailto:mkesavan170@gmail.com)
 
-## 🚀 Languages and Tools I Use
+</div>
 
-| Language/Tool | Icon |
-|---|---|
-| Java | ![Java](https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg) |
-| Python | ![Python](https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg) |
-| Spring | ![Spring](https://www.vectorlogo.zone/logos/springio/springio-icon.svg) |
-| Nginx | ![Nginx](https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg) |
-| PostgreSQL | ![PostgreSQL](https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg) |
-| MySQL | ![MySQL](https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg) |
-| MongoDB | ![MongoDB](https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg) |
-| Elasticsearch | ![Elasticsearch](https://www.vectorlogo.zone/logos/elastic/elastic-icon.svg) |
-| Kibana | ![Kibana](https://www.vectorlogo.zone/logos/elasticco_kibana/elasticco_kibana-icon.svg) |
-| Grafana | ![Grafana](https://www.vectorlogo.zone/logos/grafana/grafana-icon.svg) |
-| AWS | ![AWS](https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg) |
-| Docker | ![Docker](https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg) |
-| Jenkins | ![Jenkins](https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg) |
-| Google Cloud | ![Google Cloud](https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg) |
-| Kubernetes | ![Kubernetes](https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg) |
-| Bash | ![Bash](https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg) |
-| Azure | ![Azure](https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg) |
-| Postman | ![Postman](https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg) |
-| Git | ![Git](https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg) |
-| Linux | ![Linux](https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg) |
+---
 
-## ⚡️ Where to find me
+## 👨‍💻 About
 
-- [LinkedIn](https://linkedin.com/in/kesavan-mariappan-20b75b202)
-- [Instagram](https://instagram.com/_kesavan_mariappan_)
-- [Medium](https://medium.com/@mkesavan170)
-- [Gmail](mkesavan170gmail.com)
+A modern, responsive portfolio website showcasing my expertise in DevOps, cloud architecture, and infrastructure automation. Built with React and featuring smooth animations powered by Framer Motion.
 
-## 📊 GitHub Stats
+## ✨ Features
 
-![Kesavan Mariappan's GitHub Stats](https://github-readme-stats.vercel.app/api?username=kesavan-mariappan&show_icons=true&locale=en)
-![Kesavan Mariappan's GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=kesavan-mariappan&)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=kesavan-mariappan&show_icons=true&locale=en&layout=compact)
-![GitHub Profile Trophy](https://github-profile-trophy.vercel.app/?username=kesavan-mariappan)
+- 🎨 **Modern UI/UX** - Sleek dark theme with cyan accents and glassmorphism effects
+- 🔄 **Smooth Animations** - Powered by Framer Motion for engaging user experience
+- ♾️ **Animated Background** - DevOps infinity loop animation
+- 📱 **Fully Responsive** - Optimized for all device sizes
+- ⚡ **Fast Performance** - Built with Vite for lightning-fast load times
+- 🚀 **Auto-Deploy** - GitHub Actions workflow for seamless deployment
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|----------|-------------|
+| Frontend | React 18, Framer Motion |
+| Styling | TailwindCSS |
+| Build | Vite |
+| Deployment | GitHub Pages |
+| Icons | Custom SVG, Emoji |
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/kesavan-mariappan/kesavan-mariappan.git
+
+# Navigate to project directory
+cd kesavan-mariappan
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## 📁 Project Structure
+
+```
+kesavan-mariappan-portfolio/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml      # GitHub Actions deployment
+├── public/
+│   └── favicon.png         # Custom favicon
+├── src/
+│   ├── assets/            # Images and static assets
+│   ├── App.jsx            # Main application component
+│   ├── index.css          # Global styles
+│   └── main.jsx           # Entry point
+├── index.html
+├── package.json
+├── tailwind.config.js
+└── vite.config.js
+```
+
+## 📞 Contact
+
+- **Email:** mkesavan170@gmail.com
+- **LinkedIn:** [kesavan-mariappan](https://linkedin.com/in/kesavan-mariappan)
+- **GitHub:** [kesavan-mariappan](https://github.com/kesavan-mariappan)
+- **Medium:** [@mkesavan170](https://medium.com/@mkesavan170)
+- **Phone:** +91 9566856628
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+
+**⭐ Star this repo if you find it helpful!**
+
+Made with ❤️ by Kesavan Mariappan
+
+</div>
