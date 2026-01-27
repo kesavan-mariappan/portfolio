@@ -15,7 +15,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'experience', 'projects', 'tech', 'contact'];
+      const sections = ['hero', 'about', 'experience', 'projects', 'awards', 'tech', 'contact'];
       const scrollPos = window.scrollY + window.innerHeight / 2;
 
       for (const section of sections) {
@@ -122,7 +122,7 @@ const Portfolio = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-8">
-            {['About', 'Experience', 'Projects', 'Tech', 'Contact'].map((item, i) => (
+            {['About', 'Experience', 'Projects', 'Awards', 'Tech', 'Contact'].map((item, i) => (
               <motion.button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
@@ -182,7 +182,7 @@ const Portfolio = () => {
         className={`md:hidden fixed inset-x-0 top-[65px] bottom-0 z-40 bg-black/80 backdrop-blur-md ${mobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
       >
         <div className="flex flex-col items-center pt-16 space-y-8">
-          {['About', 'Experience', 'Projects', 'Tech', 'Contact'].map((item, i) => (
+          {['About', 'Experience', 'Projects', 'Awards', 'Tech', 'Contact'].map((item, i) => (
             <motion.button
               key={item}
               onClick={() => {
@@ -424,9 +424,9 @@ const Portfolio = () => {
                 {
                   text: (
                     <>
-                      Currently managing centralized <span className="text-cyan-400">GitLab CI/CD pipelines across 100+ AWS Lambda microservices</span> for
-                      BT Telecommunication, where I've improved deployment efficiency and operational reliability by
-                      <span className="text-cyan-400"> 40% through automation</span>.
+                      Currently <span className="text-cyan-400">leading a team of 6 DevOps engineers</span> and managing centralized GitLab CI/CD pipelines across
+                      <span className="text-cyan-400"> 100+ AWS Lambda and Step Functions</span> for BT Telecommunication, achieving
+                      <span className="text-cyan-400"> 50% reduction in deployment time</span> through automation.
                     </>
                   ),
                   icon: "⚡"
@@ -435,7 +435,7 @@ const Portfolio = () => {
                   text: (
                     <>
                       Beyond technical execution, I excel in <span className="text-cyan-400">stakeholder management,
-                        requirement gathering, and mentoring teams</span>, acting as a trusted advisor for cloud adoption and DevOps practices.
+                        AI-assisted development, and mentoring teams of 5-10 engineers</span>, leveraging tools like GitHub Copilot and Amazon Q for enhanced productivity.
                     </>
                   ),
                   icon: "🎯"
@@ -513,7 +513,7 @@ const Portfolio = () => {
                   Core Expertise
                 </h4>
                 <div className="flex flex-wrap gap-2 relative z-10">
-                  {['AWS Architecture', 'Terraform', 'Kubernetes', 'CI/CD', 'Python Automation', 'Infrastructure Migration'].map((skill, i) => (
+                  {['AWS Architecture', 'Terraform', 'Kubernetes', 'CI/CD', 'Python Automation', 'AI-Assisted Development'].map((skill, i) => (
                     <motion.span
                       key={i}
                       initial={{ opacity: 0, scale: 0 }}
@@ -564,8 +564,8 @@ const Portfolio = () => {
                 delay={0.6}
               />
               <StatCard
-                number="40"
-                label="Efficiency Improvement"
+                number="50"
+                label="Deployment Efficiency"
                 icon="🎯"
                 delay={0.7}
               />
@@ -588,10 +588,10 @@ const Portfolio = () => {
           className="mt-16 grid md:grid-cols-4 gap-6"
         >
           {[
-            { label: 'Cloud Platforms', value: '3+', color: 'from-blue-500 to-cyan-500' },
+            { label: 'Cloud Platforms', value: '4', color: 'from-blue-500 to-cyan-500' },
             { label: 'AWS Services', value: '20+', color: 'from-cyan-500 to-teal-500' },
-            { label: 'Tools Mastered', value: '15+', color: 'from-teal-500 to-green-500' },
-            { label: 'Projects Delivered', value: '50+', color: 'from-green-500 to-emerald-500' }
+            { label: 'Tools Mastered', value: '25+', color: 'from-teal-500 to-green-500' },
+            { label: 'Projects Delivered', value: '7+', color: 'from-green-500 to-emerald-500' }
           ].map((metric, i) => (
             <motion.div
               key={i}
@@ -633,25 +633,26 @@ const Portfolio = () => {
             period="Aug 2024 – Present"
             project="BT Telecommunication Project"
             achievements={[
-              "Managed centralized GitLab CI/CD pipelines across 100+ AWS Lambda microservices",
-              "Automated SonarQube reports using Python, comparing weekly quality metrics",
-              "Designed secure, scalable infrastructure using AWS (CloudFront, WAF, API Gateway, Cognito)",
-              "Migrated entire infrastructure across AWS accounts with zero downtime",
-              "Mentored team of 4 engineers on AWS, Linux, Terraform, and GitLab best practices",
-              "Improved deployment efficiency and operational reliability by 40%"
+              "Leading a team of 6 DevOps engineers in managing enterprise-grade CI/CD pipelines",
+              "Achieved 50% reduction in deployment time through optimized CI/CD pipeline management",
+              "Architected serverless infrastructure with 100+ Lambda and Step Functions",
+              "Managed Aurora RDS clusters and integrated SonarQube for code quality",
+              "Mentored 5 junior engineers on AWS, Linux, Terraform, and GitLab best practices",
+              "Designed secure, scalable infrastructure using AWS (CloudFront, WAF, API Gateway, Cognito)"
             ]}
             delay={0.2}
           />
           <ExperienceCard
             company="Icanio Technologies"
-            role="DevOps Engineer"
+            role="DevOps Engineer 3"
             period="Dec 2020 – Aug 2024"
             achievements={[
-              "Built and maintained CI/CD pipelines using Jenkins, GitHub Actions, and Terraform",
-              "Automated provisioning of EKS and ECS clusters with Docker & Kubernetes",
-              "Managed cloud migrations and infrastructure automation across AWS, GCP, DigitalOcean",
-              "Achieved 15% cost reduction through optimization strategies",
-              "Led DevOps projects for Axis Securities, PluginLive, SmartSearch, QPay, and more"
+              "Led a team of 8 engineers in multi-cloud operations across AWS, GCP, DigitalOcean",
+              "Supervised 7 team members in CI/CD pipeline design using Jenkins and GitHub Actions",
+              "Reduced deployment errors by 25% and improved deployment speed by 30%",
+              "Orchestrated EKS clusters and implemented automatic database backups",
+              "Conducted load testing using JMeter and monitored infrastructure performance",
+              "Led DevOps projects for Axis Securities, PluginLive, SmartSearch, QPay, CareerLabs"
             ]}
             delay={0.4}
           />
@@ -663,44 +664,197 @@ const Portfolio = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
-              title: "Multi-Cloud Infrastructure",
-              desc: "Deployed scalable infrastructure across AWS, GCP, and DigitalOcean using Terraform and Terragrunt",
-              tech: ["Terraform", "AWS", "GCP"],
+              title: "Smart Search Platform",
+              desc: "ElasticSearch/OpenSearch-powered search engine with multi-cloud deployment across AWS, GCP, and Digital Ocean. Led team of 7 engineers for 38 months.",
+              tech: ["ElasticSearch", "OpenSearch", "Multi-Cloud"],
               color: "from-cyan-500 to-blue-600"
             },
             {
-              title: "Zero-Downtime Migration",
-              desc: "Migrated entire AWS infrastructure across accounts ensuring zero downtime and optimized cost efficiency",
-              tech: ["AWS", "Terraform", "Migration"],
+              title: "BT Telecom Infrastructure",
+              desc: "Serverless architecture with 100+ Lambda functions and Step Functions, Aurora RDS clusters, achieving 50% deployment time reduction.",
+              tech: ["AWS Lambda", "Step Functions", "Aurora RDS"],
               color: "from-blue-500 to-purple-600"
             },
             {
-              title: "Automated Quality Reports",
-              desc: "Built Python automation for SonarQube weekly quality metrics with automated email reporting to stakeholders",
-              tech: ["Python", "SonarQube", "Automation"],
+              title: "Pluginlive Ecosystem",
+              desc: "Talent acquisition platform using S3, SES, SQS, EC2, CloudFront, EKS. Reduced release cycle by 35% over 14 months.",
+              tech: ["EKS", "CloudFront", "GitHub Actions"],
               color: "from-purple-500 to-pink-600"
             },
             {
-              title: "Container Orchestration",
-              desc: "Automated provisioning of EKS and ECS clusters with containerized microservices using Docker & Kubernetes",
-              tech: ["Kubernetes", "EKS", "Docker"],
+              title: "QPAY India",
+              desc: "Digital payments platform with EKS cluster creation and microservices deployment, orchestrated Jenkins pipelines.",
+              tech: ["Kubernetes", "EKS", "Jenkins"],
               color: "from-pink-500 to-red-600"
             },
             {
-              title: "Centralized CI/CD",
-              desc: "Managed GitLab CI/CD pipelines for 100+ Lambda microservices integrated with Step Functions",
-              tech: ["GitLab CI/CD", "Lambda", "Terraform"],
+              title: "Axis Securities",
+              desc: "EKS orchestration with Jenkins high-availability setup, integrated SonarQube and Testlink for security scanning.",
+              tech: ["EKS", "Jenkins HA", "SonarQube"],
               color: "from-green-500 to-cyan-600"
             },
             {
-              title: "Secure API Gateway",
-              desc: "Designed secure, scalable API infrastructure with CloudFront, WAF, API Gateway, and Cognito authentication",
-              tech: ["AWS WAF", "API Gateway", "Cognito"],
+              title: "CareerLabs LMS Portal",
+              desc: "AWS cloud migration with EKS architecture, infrastructure monitoring, and automated DB backup to S3.",
+              tech: ["AWS Migration", "EKS", "Automation"],
               color: "from-yellow-500 to-orange-600"
             }
           ].map((project, i) => (
             <ProjectCard key={i} project={project} delay={i * 0.15} />
           ))}
+        </div>
+      </Section >
+
+      {/* Awards & Recognition Section - HIGHLIGHTED */}
+      < Section id="awards" title="Awards & Recognition" >
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+            className="relative"
+          >
+            {/* Background glow effect */}
+            <motion.div
+              className="absolute -inset-4 bg-gradient-to-r from-yellow-500/20 via-orange-500/30 to-yellow-500/20 rounded-3xl blur-xl"
+              animate={{
+                opacity: [0.5, 0.8, 0.5],
+                scale: [1, 1.02, 1]
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
+
+            <div className="relative bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-amber-500/10 border-2 border-yellow-500/50 rounded-3xl p-8 md:p-12 overflow-hidden">
+              {/* Animated sparkles */}
+              {[...Array(6)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-2 h-2 bg-yellow-400 rounded-full"
+                  style={{
+                    top: `${20 + i * 15}%`,
+                    left: `${10 + i * 15}%`,
+                  }}
+                  animate={{
+                    opacity: [0, 1, 0],
+                    scale: [0, 1.5, 0],
+                    rotate: [0, 180, 360]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: i * 0.3
+                  }}
+                />
+              ))}
+
+              {/* Trophy icon */}
+              <motion.div
+                className="text-center mb-8"
+                animate={{
+                  y: [0, -10, 0],
+                  rotate: [0, 5, -5, 0]
+                }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                <span className="text-8xl md:text-9xl">🏆</span>
+              </motion.div>
+
+              {/* Award title */}
+              <motion.h3
+                className="text-3xl md:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-yellow-400 via-orange-400 to-amber-400 bg-clip-text text-transparent"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ delay: 0.3 }}
+              >
+                Infosys BT TownHall Award
+              </motion.h3>
+
+              {/* Award description */}
+              <motion.p
+                className="text-xl md:text-2xl text-center text-gray-300 mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ delay: 0.4 }}
+              >
+                Recognized for <span className="text-yellow-400 font-semibold">Excellence and Outstanding Contributions</span>
+              </motion.p>
+
+              <motion.p
+                className="text-lg text-center text-gray-400"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ delay: 0.5 }}
+              >
+                BT Telecommunication Project - Demonstrating exceptional DevOps practices and infrastructure automation
+              </motion.p>
+
+              {/* Achievement badges */}
+              <motion.div
+                className="flex flex-wrap justify-center gap-4 mt-8"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false }}
+                transition={{ delay: 0.6 }}
+              >
+                {[
+                  { icon: "⚡", text: "50% Deployment Reduction" },
+                  { icon: "👥", text: "Team Leadership" },
+                  { icon: "🚀", text: "Infrastructure Excellence" }
+                ].map((badge, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ scale: 1.1, y: -5 }}
+                    className="flex items-center gap-2 px-4 py-2 bg-yellow-500/20 border border-yellow-400/40 rounded-full"
+                  >
+                    <span className="text-2xl">{badge.icon}</span>
+                    <span className="text-yellow-300 font-medium">{badge.text}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* Corner decorations */}
+              <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-yellow-400/50 rounded-tl-2xl" />
+              <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-yellow-400/50 rounded-tr-2xl" />
+              <div className="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-yellow-400/50 rounded-bl-2xl" />
+              <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-yellow-400/50 rounded-br-2xl" />
+            </div>
+          </motion.div>
+
+          {/* Key Achievements Section */}
+          <motion.div
+            className="mt-12 grid md:grid-cols-3 gap-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ delay: 0.8 }}
+          >
+            {[
+              { value: "50%", label: "Deployment Time Reduction", color: "from-cyan-400 to-blue-500" },
+              { value: "15%", label: "Cloud Cost Reduction", color: "from-green-400 to-teal-500" },
+              { value: "20%", label: "Operational Efficiency", color: "from-purple-400 to-pink-500" }
+            ].map((achievement, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -8, scale: 1.03 }}
+                className="text-center p-6 bg-gradient-to-br from-gray-900 to-black border border-cyan-500/20 rounded-2xl hover:border-cyan-400/50 transition-all"
+              >
+                <motion.div
+                  className={`text-4xl font-bold bg-gradient-to-r ${achievement.color} bg-clip-text text-transparent mb-2`}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: false }}
+                  transition={{ delay: 0.9 + i * 0.1, type: "spring" }}
+                >
+                  {achievement.value}
+                </motion.div>
+                <div className="text-gray-400">{achievement.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </Section >
 
@@ -710,11 +864,11 @@ const Portfolio = () => {
           {[
             {
               category: "Cloud Platforms",
-              items: ["AWS", "GCP", "DigitalOcean"]
+              items: ["AWS", "GCP", "Azure", "Digital Ocean"]
             },
             {
               category: "AWS Services",
-              items: ["Lambda", "ECS/EKS", "RDS", "DynamoDB", "CloudFront", "WAF", "S3", "API Gateway"]
+              items: ["Lambda (100+)", "Step Functions", "Aurora RDS", "CloudFront", "WAF", "S3", "Cognito", "SSM"]
             },
             {
               category: "DevOps & IaC",
@@ -722,23 +876,23 @@ const Portfolio = () => {
             },
             {
               category: "Containers",
-              items: ["Docker", "Kubernetes", "Helm", "ECR"]
+              items: ["Docker", "Kubernetes", "Amazon EKS", "Azure AKS", "Helm", "Docker Compose"]
             },
             {
-              category: "Automation",
-              items: ["Python", "Bash", "YAML", "Step Functions"]
+              category: "Scripting & Automation",
+              items: ["Python", "Bash", "YAML", "JSON", "Step Functions"]
             },
             {
-              category: "Security & Quality",
-              items: ["SonarQube", "AWS WAF", "Cognito", "Secrets Manager", "SSM"]
+              category: "Monitoring & Observability",
+              items: ["Dynatrace", "SonarQube", "ElasticSearch", "OpenSearch", "Grafana"]
             },
             {
-              category: "Monitoring",
-              items: ["CloudWatch", "Grafana", "SNS", "SQS"]
+              category: "AI Tools",
+              items: ["GitHub Copilot", "Amazon Q", "ChatGPT", "Claude (Opus)", "Agentic AI"]
             },
             {
               category: "Databases",
-              items: ["MySQL", "PostgreSQL", "RDS", "DynamoDB"]
+              items: ["PostgreSQL", "Amazon RDS", "Aurora RDS", "DynamoDB"]
             }
           ].map((stack, i) => (
             <TechCard key={i} stack={stack} delay={i * 0.1} />
@@ -907,7 +1061,7 @@ const Portfolio = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <p className="mb-2">© 2025 Kesavan Mariappan. Building resilient systems, one deployment at a time.</p>
+          <p className="mb-2">© 2026 Kesavan Mariappan. Building resilient systems, one deployment at a time.</p>
           <div className="mt-4 flex gap-4 justify-center text-cyan-400/60">
             <span>DevOps Engineer</span>
           </div>
