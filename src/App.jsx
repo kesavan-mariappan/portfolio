@@ -575,46 +575,6 @@ const Portfolio = () => {
                 icon="💰"
                 delay={0.8}
               />
-
-              {/* Animated achievement badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5, rotate: -180 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                viewport={{ once: false }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.9,
-                  type: "spring",
-                  stiffness: 200
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  rotate: [0, -5, 5, 0],
-                  transition: { duration: 0.5 }
-                }}
-                className="relative p-6 bg-gradient-to-br from-yellow-500/10 to-orange-600/10 border-2 border-yellow-500/30 rounded-2xl text-center overflow-hidden group cursor-default"
-              >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-yellow-500/0 via-yellow-500/20 to-yellow-500/0"
-                  animate={{
-                    rotate: [0, 360],
-                    scale: [1, 1.5, 1]
-                  }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                />
-                <motion.div
-                  className="text-5xl mb-2 relative z-10"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    rotate: [0, 10, -10, 0]
-                  }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  🏆
-                </motion.div>
-                <p className="text-yellow-400 font-bold text-lg relative z-10">Zero Downtime</p>
-                <p className="text-gray-400 text-sm relative z-10">AWS Infrastructure Migration</p>
-              </motion.div>
             </div>
           </AnimatedCard>
         </div>
