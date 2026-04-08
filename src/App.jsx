@@ -931,7 +931,7 @@ const Portfolio = () => {
               Passionate about DevOps, cloud architecture, and automation? Let's connect and share insights on building
               scalable systems, exploring new technologies, or discussing best practices in the tech community.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
               {[
                 {
                   label: "Email",
@@ -960,6 +960,13 @@ const Portfolio = () => {
                   icon: "💻",
                   link: "https://github.com/kesavan-mariappan",
                   gradient: "from-gray-500/20 via-slate-500/10 to-zinc-500/20"
+                },
+                {
+                  label: "GitHub (DevOps)",
+                  value: "kesavan-mariappan-devops",
+                  icon: "⚙️",
+                  link: "https://github.com/kesavan-mariappan-devops",
+                  gradient: "from-cyan-500/20 via-slate-500/10 to-gray-500/20"
                 },
                 {
                   label: "Medium",
