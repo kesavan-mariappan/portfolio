@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
+import { SiGmail, SiInstagram, SiGithub, SiMedium } from 'react-icons/si';
+import { FaLinkedinIn } from 'react-icons/fa';
 import heroImage from './assets/kesavan-m-hero-image.png';
 import k8sArchImage from './assets/k8s-istio-architecture.png';
 
@@ -926,52 +928,52 @@ const Portfolio = () => {
       {/* Contact Section */}
       < Section id="contact" title="Let's Connect" dark >
         <AnimatedCard delay={0.2}>
-          <div className="max-w-3xl mx-auto text-center space-y-8">
+          <div className="max-w-5xl mx-auto text-center space-y-8">
             <p className="text-xl text-gray-300">
               Passionate about DevOps, cloud architecture, and automation? Let's connect and share insights on building
               scalable systems, exploring new technologies, or discussing best practices in the tech community.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 {
                   label: "Email",
                   value: "mkesavan170@gmail.com",
-                  icon: "📧",
+                  icon: <SiGmail className="w-8 h-8 text-[#EA4335]" />,
                   link: "mailto:mkesavan170@gmail.com",
                   gradient: "from-red-500/20 via-orange-500/10 to-yellow-500/20"
                 },
                 {
                   label: "LinkedIn",
                   value: "kesavan-mariappan",
-                  icon: "💼",
+                  icon: <FaLinkedinIn className="w-8 h-8 text-[#0A66C2]" />,
                   link: "https://linkedin.com/in/kesavan-mariappan",
                   gradient: "from-blue-600/20 via-blue-500/10 to-cyan-500/20"
                 },
                 {
                   label: "Instagram",
                   value: "@_kesavan_mariappan_",
-                  icon: "📸",
+                  icon: <SiInstagram className="w-8 h-8 text-[#E1306C]" />,
                   link: "https://www.instagram.com/_kesavan_mariappan_/",
                   gradient: "from-purple-500/20 via-pink-500/10 to-orange-500/20"
                 },
                 {
                   label: "GitHub",
                   value: "kesavan-mariappan",
-                  icon: "💻",
+                  icon: <SiGithub className="w-8 h-8 text-white" />,
                   link: "https://github.com/kesavan-mariappan",
                   gradient: "from-gray-500/20 via-slate-500/10 to-zinc-500/20"
                 },
                 {
                   label: "GitHub (DevOps)",
                   value: "kesavan-mariappan-devops",
-                  icon: "⚙️",
+                  icon: <SiGithub className="w-8 h-8 text-[#22d3ee]" />,
                   link: "https://github.com/kesavan-mariappan-devops",
                   gradient: "from-cyan-500/20 via-slate-500/10 to-gray-500/20"
                 },
                 {
                   label: "Medium",
                   value: "@mkesavan170",
-                  icon: "✍️",
+                  icon: <SiMedium className="w-8 h-8 text-white" />,
                   link: "https://medium.com/@mkesavan170",
                   gradient: "from-green-500/20 via-emerald-500/10 to-teal-500/20"
                 }
@@ -996,7 +998,7 @@ const Portfolio = () => {
                     transition: { duration: 0.3, type: "spring", stiffness: 300 }
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className={`relative bg-gradient-to-br ${contact.gradient} border border-cyan-500/20 rounded-2xl p-6 hover:border-cyan-400/60 transition-all cursor-pointer group overflow-hidden`}
+                  className={`relative bg-gradient-to-br ${contact.gradient} border border-cyan-500/20 rounded-2xl p-5 hover:border-cyan-400/60 transition-all cursor-pointer group overflow-hidden flex items-center gap-4`}
                 >
                   {/* Animated background glow */}
                   <motion.div
@@ -1013,47 +1015,26 @@ const Portfolio = () => {
                     }}
                   />
 
-                  {/* Icon with bounce animation */}
+                  {/* Icon */}
                   <motion.div
-                    className="text-4xl mb-3 relative z-10"
-                    animate={{
-                      y: [0, -5, 0],
-                      rotate: [0, 5, -5, 0]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      repeatDelay: 3 + i * 0.5,
-                      ease: "easeInOut"
-                    }}
-                    whileHover={{
-                      scale: 1.3,
-                      rotate: [0, -10, 10, 0],
-                      transition: { duration: 0.4 }
-                    }}
+                    className="relative z-10 flex-shrink-0"
+                    animate={{ y: [0, -4, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 + i * 0.5, ease: "easeInOut" }}
+                    whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
                   >
                     {contact.icon}
                   </motion.div>
 
-                  {/* Label with slide-in effect */}
-                  <motion.div
-                    className="text-sm text-gray-400 mb-1 relative z-10 font-medium tracking-wide"
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.15 + 0.4 }}
-                  >
-                    {contact.label}
-                  </motion.div>
-
-                  {/* Value with gradient text on hover */}
-                  <motion.div
-                    className="text-cyan-400 font-semibold break-all text-sm relative z-10 group-hover:bg-gradient-to-r group-hover:from-cyan-300 group-hover:to-blue-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300"
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.15 + 0.5 }}
-                  >
-                    {contact.value}
-                  </motion.div>
+                  {/* Text */}
+                  <div className="relative z-10 text-left min-w-0">
+                    <div className="text-xs text-gray-400 font-medium tracking-wide mb-0.5">{contact.label}</div>
+                    <div
+                      className="text-sm text-cyan-400 font-semibold truncate group-hover:text-cyan-300 transition-colors"
+                      title={contact.value}
+                    >
+                      {contact.value}
+                    </div>
+                  </div>
 
                   {/* Corner accent */}
                   <motion.div
@@ -1090,10 +1071,16 @@ const Portfolio = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
+          className="space-y-3"
         >
-          <p className="mb-2">© 2026 Kesavan Mariappan. Building resilient systems, one deployment at a time.</p>
-          <div className="mt-4 flex gap-4 justify-center text-cyan-400/60">
+          <p className="mb-2">© {new Date().getFullYear()} Kesavan Mariappan. Turning complex infrastructure into reliable, automated delivery pipelines.</p>
+          <p className="text-sm text-gray-600">Designed & built with React, Framer Motion, and Tailwind CSS</p>
+          <div className="mt-4 flex gap-6 justify-center text-cyan-400/60 text-sm">
+            <span>Senior Associate Consultant</span>
+            <span className="text-gray-700">|</span>
             <span>DevOps Engineer</span>
+            <span className="text-gray-700">|</span>
+            <span>Infosys Ltd</span>
           </div>
         </motion.div>
       </footer >
