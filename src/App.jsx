@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
 import heroImage from './assets/kesavan-m-hero-image.png';
+import k8sArchImage from './assets/k8s-istio-architecture.png';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -15,7 +16,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'experience', 'projects', 'awards', 'tech', 'contact'];
+      const sections = ['hero', 'about', 'experience', 'personal-projects', 'projects', 'awards', 'tech', 'contact'];
       const scrollPos = window.scrollY + window.innerHeight / 2;
 
       for (const section of sections) {
@@ -125,7 +126,7 @@ const Portfolio = () => {
             {['About', 'Experience', 'Projects', 'Awards', 'Tech', 'Contact'].map((item, i) => (
               <motion.button
                 key={item}
-                onClick={() => scrollToSection(item.toLowerCase())}
+                onClick={() => scrollToSection(item === 'Projects' ? 'personal-projects' : item.toLowerCase())}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 + 0.3 }}
@@ -186,7 +187,7 @@ const Portfolio = () => {
             <motion.button
               key={item}
               onClick={() => {
-                scrollToSection(item.toLowerCase());
+                scrollToSection(item === 'Projects' ? 'personal-projects' : item.toLowerCase());
                 setMobileMenuOpen(false);
               }}
               initial={{ opacity: 0, y: 20 }}
@@ -658,6 +659,28 @@ const Portfolio = () => {
           />
         </div>
       </Section >
+
+      {/* Personal Projects */}
+      <Section id="personal-projects" title="Personal Projects">
+        <PersonalProjectCard
+          project={{
+            title: 'k8s-istio-platform',
+            github: 'https://github.com/kesavan-mariappan-devops/k8s-istio-platform',
+            image: k8sArchImage,
+            badges: ['Open Source', 'DevOps'],
+            desc: 'Production-grade microservices platform demonstrating Kubernetes orchestration, Istio service mesh, and a full CI/CD pipeline with GitHub Actions.',
+            highlights: [
+              'Canary deployment — 90/10 traffic split via Istio VirtualService + DestinationRule',
+              'STRICT mTLS PeerAuthentication + deny-all AuthorizationPolicy across namespaces',
+              'Circuit breaker, retries, 3s timeout, and fault injection for resilience testing',
+              'CI/CD: lint → test → build → push GHCR → kubeconform validate → dev (auto) → prod (manual gate)',
+              'IaC with Terraform + Terragrunt for dev/prod environments'
+            ],
+            tech: ['Kubernetes', 'Istio', 'React + Vite', 'Node.js', 'Docker', 'GitHub Actions', 'Terraform', 'Terragrunt']
+          }}
+          delay={0.2}
+        />
+      </Section>
 
       {/* Featured Projects */}
       < Section id="projects" title="Featured Projects" dark >
@@ -1216,6 +1239,74 @@ const ExperienceCard = ({ company, role, period, project, achievements, delay })
           </motion.li>
         ))}
       </ul>
+    </motion.div>
+  );
+};
+
+const PersonalProjectCard = ({ project, delay }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.2 });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 60 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+      transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+      className="group relative bg-gradient-to-br from-gray-900 to-black border border-cyan-500/20 rounded-3xl overflow-hidden hover:border-cyan-400/50 transition-all max-w-3xl mx-auto"
+    >
+      <div className="relative overflow-hidden h-52">
+        <img
+          src={project.image}
+          alt={`${project.title} architecture`}
+          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
+        <div className="absolute top-3 left-3 flex gap-2">
+          {project.badges?.map((b, i) => (
+            <span key={i} className="px-2 py-0.5 bg-black/70 border border-cyan-400/40 rounded-full text-xs text-cyan-300">{b}</span>
+          ))}
+        </div>
+      </div>
+
+      <div className="p-8">
+        <div className="flex items-start justify-between mb-3">
+          <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">{project.title}</h3>
+          <motion.a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="ml-4 flex-shrink-0 px-4 py-1.5 bg-cyan-500/10 border border-cyan-500/40 rounded-full text-sm text-cyan-400 hover:bg-cyan-500/20 transition-all"
+          >
+            GitHub →
+          </motion.a>
+        </div>
+
+        <p className="text-gray-400 mb-5 leading-relaxed">{project.desc}</p>
+
+        <div className="space-y-2 mb-5">
+          {project.highlights.map((h, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -15 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -15 }}
+              transition={{ delay: delay + i * 0.08 + 0.3 }}
+              className="flex items-start gap-2 text-sm text-gray-300"
+            >
+              <span className="text-cyan-400 mt-0.5 flex-shrink-0">▹</span>
+              <span>{h}</span>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          {project.tech.map((t, i) => (
+            <span key={i} className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-xs text-cyan-400">{t}</span>
+          ))}
+        </div>
+      </div>
     </motion.div>
   );
 };
