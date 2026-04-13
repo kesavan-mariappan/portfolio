@@ -41,7 +41,7 @@ const Portfolio = () => {
         ([entry]) => {
           if (entry.isIntersecting && !visited.has(id)) {
             visited.add(id);
-            setDoc(doc(db, 'analytics', 'sectionClicks'), { [id]: increment(1) }, { merge: true });
+            setDoc(doc(db, 'analytics', 'sectionViews'), { [id]: increment(1) }, { merge: true });
           }
         },
         { threshold: 0.3 }
