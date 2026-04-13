@@ -5,6 +5,18 @@ import { db } from './firebase';
 
 const SECTIONS = ['hero', 'about', 'experience', 'personal-projects', 'projects', 'awards', 'tech', 'contact', 'resumeViewed'];
 
+const SECTION_LABELS = {
+  'hero': 'Hero',
+  'about': 'About',
+  'experience': 'Experience',
+  'personal-projects': 'Personal Projects',
+  'projects': 'Featured Projects',
+  'awards': 'Awards',
+  'tech': 'Tech',
+  'contact': 'Contact',
+  'resumeViewed': '📄 Resume Viewed',
+};
+
 const Analytics = ({ onBack }) => {
   const [pageViews, setPageViews] = useState(0);
   const [sectionClicks, setSectionClicks] = useState({});
@@ -59,6 +71,7 @@ const Analytics = ({ onBack }) => {
                 const clicks = sectionClicks[section] || 0;
                 const pct = totalClicks > 0 ? (clicks / totalClicks) * 100 : 0;
                 const isResume = section === 'resumeViewed';
+                const label = SECTION_LABELS[section] || section;
                 return (
                   <motion.div
                     key={section}
@@ -72,8 +85,8 @@ const Analytics = ({ onBack }) => {
                     }`}
                   >
                     <div className="flex justify-between items-center mb-2">
-                      <span className={`capitalize font-medium ${ isResume ? 'text-cyan-300' : 'text-white'}`}>
-                        {isResume ? '📄 Resume Viewed' : section.replace('-', ' ')}
+                      <span className={`font-medium ${ isResume ? 'text-cyan-300' : 'text-white'}`}>
+                        {label}
                       </span>
                       <span className={`font-bold ${ isResume ? 'text-cyan-300 text-lg' : 'text-cyan-400'}`}>{clicks}</span>
                     </div>
