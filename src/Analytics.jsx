@@ -15,6 +15,7 @@ const SECTION_LABELS = {
   'tech': 'Tech',
   'contact': 'Contact',
   'resumeViewed': '📄 Resume Viewed',
+  'linkedinViewed': '💼 LinkedIn Viewed',
 };
 
 const SectionTable = ({ title, data, sections }) => {
@@ -75,7 +76,7 @@ const Analytics = ({ onBack }) => {
     return () => { unsubPV(); unsubSC(); unsubSV(); };
   }, []);
 
-  const NAV_SECTIONS = ['hero', 'about', 'experience', 'personal-projects', 'projects', 'awards', 'tech', 'contact', 'resumeViewed'];
+  const NAV_SECTIONS = ['hero', 'about', 'experience', 'personal-projects', 'projects', 'awards', 'tech', 'contact', 'resumeViewed', 'linkedinViewed'];
   const SCROLL_SECTIONS = ['hero', 'about', 'experience', 'personal-projects', 'projects', 'awards', 'tech', 'contact'];
 
   return (

@@ -393,7 +393,10 @@ const Portfolio = () => {
                   View Resume
                 </motion.a>
                 <motion.button
-                  onClick={() => window.open('https://www.linkedin.com/in/kesavan-mariappan/', '_blank')}
+                  onClick={() => {
+                    window.open('https://www.linkedin.com/in/kesavan-mariappan/', '_blank');
+                    setDoc(doc(db, 'analytics', 'sectionClicks'), { linkedinViewed: increment(1) }, { merge: true });
+                  }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 rounded-md font-semibold hover:bg-cyan-500/10 transition-all"
