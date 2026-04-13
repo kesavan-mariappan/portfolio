@@ -1046,8 +1046,7 @@ const Portfolio = () => {
                   href={contact.link || '#'}
                   target={contact.link && !contact.link.startsWith('mailto:') ? "_blank" : undefined}
                   rel={contact.link && !contact.link.startsWith('mailto:') ? "noopener noreferrer" : undefined}
-                  onClick={() => setDoc(doc(db, 'analytics', 'sectionClicks'), { [contact.trackKey]: increment(1) }, { merge: true })}}
-                  initial={{ opacity: 0, y: 40, scale: 0.9, rotateX: 15 }}
+                  onClick={() => setDoc(doc(db, 'analytics', 'sectionClicks'), { [contact.trackKey]: increment(1) }, { merge: true })}                  initial={{ opacity: 0, y: 40, scale: 0.9, rotateX: 15 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{
