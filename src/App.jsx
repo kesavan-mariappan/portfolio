@@ -329,7 +329,7 @@ const Portfolio = () => {
                 className="flex gap-4 flex-wrap pt-4"
               >
                 <motion.a
-                  href="https://drive.google.com/file/d/14zxehPTWHRqNoGoYD8WKHhdTMgbMOBZ7/view?usp=sharing"
+                  href="http://bit.ly/48HY8oC"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, backgroundColor: '#0891b2' }}
