@@ -12,6 +12,22 @@ const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showAnalytics, setShowAnalytics] = useState(false);
+  const [secretClicks, setSecretClicks] = useState(0);
+  const secretTimerRef = useRef(null);
+
+  const handleSecretClick = () => {
+    setSecretClicks((prev) => {
+      const next = prev + 1;
+      if (next >= 5) {
+        setShowAnalytics(true);
+        return 0;
+      }
+      clearTimeout(secretTimerRef.current);
+      secretTimerRef.current = setTimeout(() => setSecretClicks(0), 3000);
+      if (next === 1) scrollToSection('hero');
+      return next;
+    });
+  };
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll();
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
@@ -158,12 +174,12 @@ const Portfolio = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.3 }}
               className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent cursor-pointer"
-              onClick={() => scrollToSection('hero')}
+              onClick={handleSecretClick}
             >
               KM
             </motion.div>
 
-          {/* Desktop Navigation */}
+      {/* Desktop Navigation */}
           <div className="hidden md:flex gap-8 items-center">
             {['About', 'Experience', 'Personal Projects', 'Featured Projects', 'Awards', 'Tech', 'Contact'].map((item, i) => {
               const id = item === 'Personal Projects' ? 'personal-projects' : item === 'Featured Projects' ? 'projects' : item.toLowerCase();
@@ -189,17 +205,6 @@ const Portfolio = () => {
               </motion.button>
               );
             })}
-            <motion.button
-              onClick={() => setShowAnalytics(true)}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-4 py-1.5 border border-cyan-500/50 text-cyan-400 rounded-full text-sm hover:bg-cyan-500/10 hover:border-cyan-400 transition-all"
-            >
-              📊 Analytics
-            </motion.button>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -251,17 +256,6 @@ const Portfolio = () => {
               </motion.button>
             );
           })}
-          <motion.button
-            onClick={() => { setShowAnalytics(true); setMobileMenuOpen(false); }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={mobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: mobileMenuOpen ? 0.7 : 0 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className="text-2xl font-medium text-cyan-400 hover:text-cyan-300 transition-colors"
-          >
-            📊 Analytics
-          </motion.button>
         </div>
       </motion.div>
 
