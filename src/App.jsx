@@ -5,6 +5,7 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import heroImage from './assets/kesavan-m-hero-image.png';
 import k8sArchImage from './assets/k8s-istio-architecture.png';
 import Analytics from './Analytics';
+import LoginModal from './LoginModal';
 import { db } from './firebase';
 import { doc, setDoc, increment } from 'firebase/firestore';
 
@@ -12,6 +13,7 @@ const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showAnalytics, setShowAnalytics] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
   const [secretClicks, setSecretClicks] = useState(0);
   const secretTimerRef = useRef(null);
 
@@ -19,7 +21,7 @@ const Portfolio = () => {
     setSecretClicks((prev) => {
       const next = prev + 1;
       if (next >= 5) {
-        setShowAnalytics(true);
+        setShowLogin(true);
         return 0;
       }
       clearTimeout(secretTimerRef.current);
@@ -117,6 +119,12 @@ const Portfolio = () => {
 
   return (
     <div ref={containerRef} className="bg-black text-white overflow-x-hidden">
+      {showLogin && (
+        <LoginModal
+          onSuccess={() => { setShowLogin(false); setShowAnalytics(true); }}
+          onClose={() => setShowLogin(false)}
+        />
+      )}
       {/* Global DevOps Infinity Loop Animation - Fixed Background */}
       <div className="fixed inset-0 flex items-center justify-center overflow-hidden pointer-events-none z-0">
         {/* Large Thin SVG Infinity with Running Dot */}

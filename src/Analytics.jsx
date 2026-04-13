@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { doc, onSnapshot } from 'firebase/firestore';
-import { db } from './firebase';
+import { signOut } from 'firebase/auth';
+import { db, auth } from './firebase';
 
 const SECTION_LABELS = {
   'hero': 'Hero',
@@ -116,7 +117,7 @@ const Analytics = ({ onBack }) => {
       <div className="border-b border-cyan-500/10 bg-gray-950/80 backdrop-blur px-6 py-4 flex items-center justify-between sticky top-0 z-10">
         <div className="flex items-center gap-4">
           <motion.button
-            onClick={onBack}
+            onClick={() => { signOut(auth); onBack(); }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-3 py-1.5 border border-cyan-500/30 text-cyan-400 rounded-lg hover:bg-cyan-500/10 transition-all text-sm"
