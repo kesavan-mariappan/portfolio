@@ -1129,7 +1129,13 @@ const Portfolio = () => {
             >
               <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 border border-cyan-500/30 rounded-full">
                 <span className="text-gray-400">Phone:</span>
-                <span className="text-cyan-400 font-semibold">+91 9566856628</span>
+                <a
+                  href="tel:+919566856628"
+                  onClick={() => setDoc(doc(db, 'analytics', 'sectionClicks'), { contact_phone: increment(1) }, { merge: true })}
+                  className="text-cyan-400 font-semibold hover:text-cyan-300 transition-colors"
+                >
+                  +91 9566856628
+                </a>
               </div>
             </motion.div>
           </div>
