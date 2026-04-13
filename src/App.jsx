@@ -141,24 +141,21 @@ const Portfolio = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-8 items-center">
-            {['About', 'Experience', 'Projects', 'Awards', 'Tech', 'Contact'].map((item, i) => (
+            {['About', 'Experience', 'Personal Projects', 'Featured Projects', 'Awards', 'Tech', 'Contact'].map((item, i) => {
+              const id = item === 'Personal Projects' ? 'personal-projects' : item === 'Featured Projects' ? 'projects' : item.toLowerCase();
+              return (
               <motion.button
                 key={item}
-                onClick={() => scrollToSection(item === 'Projects' ? 'personal-projects' : item.toLowerCase())}
+                onClick={() => scrollToSection(id)}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 + 0.3 }}
-                whileHover={{
-                  scale: 1.1,
-                  color: '#22d3ee',
-                  transition: { duration: 0.2 }
-                }}
+                whileHover={{ scale: 1.1, color: '#22d3ee', transition: { duration: 0.2 } }}
                 whileTap={{ scale: 0.95 }}
-                className={`text-gray-300 hover:text-cyan-400 transition-colors relative ${activeSection === item.toLowerCase() ? 'text-cyan-400' : ''
-                  }`}
+                className={`text-gray-300 hover:text-cyan-400 transition-colors relative ${activeSection === id ? 'text-cyan-400' : ''}`}
               >
                 {item}
-                {activeSection === item.toLowerCase() && (
+                {activeSection === id && (
                   <motion.div
                     layoutId="activeSection"
                     className="absolute -bottom-1 left-0 right-0 h-0.5 bg-cyan-400"
@@ -166,7 +163,8 @@ const Portfolio = () => {
                   />
                 )}
               </motion.button>
-            ))}
+              );
+            })}
             <motion.button
               onClick={() => setShowAnalytics(true)}
               initial={{ opacity: 0, y: -20 }}
@@ -212,24 +210,23 @@ const Portfolio = () => {
         className={`md:hidden fixed inset-x-0 top-[65px] bottom-0 z-40 bg-black/80 backdrop-blur-md ${mobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
       >
         <div className="flex flex-col items-center pt-16 space-y-8">
-          {['About', 'Experience', 'Projects', 'Awards', 'Tech', 'Contact'].map((item, i) => (
-            <motion.button
-              key={item}
-              onClick={() => {
-                scrollToSection(item === 'Projects' ? 'personal-projects' : item.toLowerCase());
-                setMobileMenuOpen(false);
-              }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={mobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ delay: mobileMenuOpen ? i * 0.1 : 0 }}
-              whileHover={{ scale: 1.1, color: '#22d3ee' }}
-              whileTap={{ scale: 0.95 }}
-              className={`text-2xl font-medium ${activeSection === item.toLowerCase() ? 'text-cyan-400' : 'text-white'
-                } hover:text-cyan-400 transition-colors`}
-            >
-              {item}
-            </motion.button>
-          ))}
+          {['About', 'Experience', 'Personal Projects', 'Featured Projects', 'Awards', 'Tech', 'Contact'].map((item, i) => {
+            const id = item === 'Personal Projects' ? 'personal-projects' : item === 'Featured Projects' ? 'projects' : item.toLowerCase();
+            return (
+              <motion.button
+                key={item}
+                onClick={() => { scrollToSection(id); setMobileMenuOpen(false); }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={mobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ delay: mobileMenuOpen ? i * 0.1 : 0 }}
+                whileHover={{ scale: 1.1, color: '#22d3ee' }}
+                whileTap={{ scale: 0.95 }}
+                className={`text-2xl font-medium ${activeSection === id ? 'text-cyan-400' : 'text-white'} hover:text-cyan-400 transition-colors`}
+              >
+                {item}
+              </motion.button>
+            );
+          })}
           <motion.button
             onClick={() => { setShowAnalytics(true); setMobileMenuOpen(false); }}
             initial={{ opacity: 0, y: 20 }}
