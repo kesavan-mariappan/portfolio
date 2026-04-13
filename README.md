@@ -19,7 +19,7 @@
 
 ## 👨💻 About
 
-A modern, responsive portfolio website showcasing my expertise in DevOps, cloud architecture, and infrastructure automation. Built with React 19 and featuring smooth animations powered by Framer Motion, with a Firebase backend for analytics and admin access.
+A modern, responsive portfolio website showcasing my expertise in DevOps, cloud architecture, and infrastructure automation. Built with React 19 and featuring smooth animations powered by Framer Motion, with a Firebase backend for real-time analytics and protected admin dashboard.
 
 ## ✨ Features
 
@@ -28,9 +28,11 @@ A modern, responsive portfolio website showcasing my expertise in DevOps, cloud 
 - ♾️ **Animated Background** - DevOps infinity loop animation
 - 📱 **Fully Responsive** - Optimized for all device sizes
 - ⚡ **Fast Performance** - Built with rolldown-vite for lightning-fast load times
-- 🔥 **Firebase Backend** - Firestore analytics tracking + Firebase Auth admin login
-- 📊 **Live Analytics Dashboard** - Real-time visitor and section engagement metrics
+- 🔥 **Firebase Backend** - Firestore real-time analytics + Firebase Auth login
+- 📊 **Grafana-style Analytics Dashboard** - Real-time visitor metrics, nav clicks, scroll views, contact link clicks
+- 🔐 **Protected Analytics** - Hidden behind secret 5-click trigger + email/password login
 - 🚀 **Auto-Deploy** - GitHub Actions workflow for seamless deployment to GitHub Pages
+- 🐳 **Docker Support** - Local preview via Docker with Firebase env injection
 
 ## 🛠️ Tech Stack
 
@@ -42,6 +44,29 @@ A modern, responsive portfolio website showcasing my expertise in DevOps, cloud 
 | Backend | Firebase 11 (Firestore, Auth) |
 | Deployment | GitHub Pages via GitHub Actions |
 | Icons | react-icons 5 |
+| Container | Docker + Nginx |
+
+## 📊 Analytics Tracking
+
+The portfolio tracks the following metrics in real-time via Firestore:
+
+| Metric | Description |
+|--------|-------------|
+| Page Views | Total visits to the portfolio |
+| Nav Clicks | Which sections users navigate to |
+| Scroll Views | Which sections users actually read (IntersectionObserver) |
+| Resume Clicks | How many times resume was viewed |
+| LinkedIn Clicks | Hero section LinkedIn button clicks |
+| Contact Link Clicks | Email, LinkedIn, Instagram, GitHub, Medium clicks |
+
+> **Access:** Click the **KM logo 5 times** rapidly → login with your credentials → Grafana-style dashboard opens
+
+## 🔐 Security
+
+- Firebase API key restricted to `https://kesavan-mariappan.github.io/*` only
+- Firestore rules: `write: true`, `read: if request.auth != null`
+- Analytics dashboard protected by Firebase Email/Password authentication
+- GitHub secrets used for all Firebase credentials — never hardcoded
 
 ## 🚀 Quick Start
 
@@ -66,6 +91,18 @@ npm run dev
 npm run build
 ```
 
+## 🐳 Docker Local Preview
+
+```bash
+# Build and run with Firebase env vars injected from .env.local
+bash preview.sh
+
+# Opens at http://localhost:3000
+
+# Stop the container
+docker stop portfolio-preview
+```
+
 ## 🔑 Environment Variables
 
 Create a `.env.local` file with the following Firebase config:
@@ -78,6 +115,8 @@ VITE_FIREBASE_STORAGE_BUCKET=
 VITE_FIREBASE_MESSAGING_SENDER_ID=
 VITE_FIREBASE_APP_ID=
 ```
+
+> For GitHub Actions deployment, add these as **repository secrets** under Settings → Secrets → Actions.
 
 ## 📁 Project Structure
 
@@ -92,8 +131,8 @@ portfolio/
 │   ├── assets/                   # Images and static assets
 │   ├── App.jsx                   # Main component — all portfolio sections
 │   ├── App.css                   # Component-scoped animation styles
-│   ├── Analytics.jsx             # Firebase analytics dashboard
-│   ├── LoginModal.jsx            # Admin auth modal
+│   ├── Analytics.jsx             # Grafana-style analytics dashboard
+│   ├── LoginModal.jsx            # Email/password auth modal
 │   ├── firebase.js               # Firebase init (exports db & auth)
 │   ├── index.css                 # Global Tailwind styles
 │   └── main.jsx                  # React DOM entry point
@@ -101,7 +140,8 @@ portfolio/
 ├── package.json
 ├── tailwind.config.js
 ├── vite.config.js
-└── Dockerfile                    # Local Docker preview
+├── Dockerfile                    # Docker build with Firebase ARG injection
+└── preview.sh                    # Local Docker preview script
 ```
 
 ## 📞 Contact
