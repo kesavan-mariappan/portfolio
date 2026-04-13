@@ -997,42 +997,48 @@ const Portfolio = () => {
                   value: "mkesavan170@gmail.com",
                   icon: <SiGmail className="w-8 h-8 text-[#EA4335]" />,
                   link: "mailto:mkesavan170@gmail.com",
-                  gradient: "from-red-500/20 via-orange-500/10 to-yellow-500/20"
+                  gradient: "from-red-500/20 via-orange-500/10 to-yellow-500/20",
+                  trackKey: "contact_email"
                 },
                 {
                   label: "LinkedIn",
                   value: "kesavan-mariappan",
                   icon: <FaLinkedinIn className="w-8 h-8 text-[#0A66C2]" />,
                   link: "https://linkedin.com/in/kesavan-mariappan",
-                  gradient: "from-blue-600/20 via-blue-500/10 to-cyan-500/20"
+                  gradient: "from-blue-600/20 via-blue-500/10 to-cyan-500/20",
+                  trackKey: "contact_linkedin"
                 },
                 {
                   label: "Instagram",
                   value: "@_kesavan_mariappan_",
                   icon: <SiInstagram className="w-8 h-8 text-[#E1306C]" />,
                   link: "https://www.instagram.com/_kesavan_mariappan_/",
-                  gradient: "from-purple-500/20 via-pink-500/10 to-orange-500/20"
+                  gradient: "from-purple-500/20 via-pink-500/10 to-orange-500/20",
+                  trackKey: "contact_instagram"
                 },
                 {
                   label: "GitHub",
                   value: "kesavan-mariappan",
                   icon: <SiGithub className="w-8 h-8 text-white" />,
                   link: "https://github.com/kesavan-mariappan",
-                  gradient: "from-gray-500/20 via-slate-500/10 to-zinc-500/20"
+                  gradient: "from-gray-500/20 via-slate-500/10 to-zinc-500/20",
+                  trackKey: "contact_github"
                 },
                 {
                   label: "GitHub (DevOps)",
                   value: "kesavan-mariappan-devops",
                   icon: <SiGithub className="w-8 h-8 text-[#22d3ee]" />,
                   link: "https://github.com/kesavan-mariappan-devops",
-                  gradient: "from-cyan-500/20 via-slate-500/10 to-gray-500/20"
+                  gradient: "from-cyan-500/20 via-slate-500/10 to-gray-500/20",
+                  trackKey: "contact_github_devops"
                 },
                 {
                   label: "Medium",
                   value: "@mkesavan170",
                   icon: <SiMedium className="w-8 h-8 text-white" />,
                   link: "https://medium.com/@mkesavan170",
-                  gradient: "from-green-500/20 via-emerald-500/10 to-teal-500/20"
+                  gradient: "from-green-500/20 via-emerald-500/10 to-teal-500/20",
+                  trackKey: "contact_medium"
                 }
               ].map((contact, i) => (
                 <motion.a
@@ -1040,6 +1046,7 @@ const Portfolio = () => {
                   href={contact.link || '#'}
                   target={contact.link && !contact.link.startsWith('mailto:') ? "_blank" : undefined}
                   rel={contact.link && !contact.link.startsWith('mailto:') ? "noopener noreferrer" : undefined}
+                  onClick={() => setDoc(doc(db, 'analytics', 'sectionClicks'), { [contact.trackKey]: increment(1) }, { merge: true })}}
                   initial={{ opacity: 0, y: 40, scale: 0.9, rotateX: 15 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
                   viewport={{ once: false, amount: 0.3 }}
