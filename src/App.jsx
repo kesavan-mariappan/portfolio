@@ -30,6 +30,30 @@ const Portfolio = () => {
   };
 
   useEffect(() => {
+    const visited = new Set();
+    const observers = [];
+    const sections = ['hero', 'about', 'experience', 'personal-projects', 'projects', 'awards', 'tech', 'contact'];
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && !visited.has(id)) {
+            visited.add(id);
+            setDoc(doc(db, 'analytics', 'sectionClicks'), { [id]: increment(1) }, { merge: true });
+          }
+        },
+        { threshold: 0.3 }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       const sections = ['hero', 'about', 'experience', 'personal-projects', 'projects', 'awards', 'tech', 'contact'];
       const scrollPos = window.scrollY + window.innerHeight / 2;
