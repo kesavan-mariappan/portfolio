@@ -423,13 +423,13 @@ const Portfolio = () => {
                 <p className="text-sm uppercase tracking-wider text-cyan-400/70 font-semibold">Get in Touch</p>
                 <div className="flex items-center gap-3">
                   <span className="text-cyan-400">📧</span>
-                  <a href="mailto:mkesavan170@gmail.com" className="hover:text-cyan-400 transition-colors">
+                  <a href="mailto:mkesavan170@gmail.com" onClick={() => setDoc(doc(db, 'analytics', 'sectionClicks'), { contact_email: increment(1) }, { merge: true })} className="hover:text-cyan-400 transition-colors">
                     mkesavan170@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-cyan-400">📞</span>
-                  <a href="tel:+919566856628" className="hover:text-cyan-400 transition-colors">
+                  <a href="tel:+919566856628" onClick={() => setDoc(doc(db, 'analytics', 'sectionClicks'), { contact_phone: increment(1) }, { merge: true })} className="hover:text-cyan-400 transition-colors">
                     +91 9566856628
                   </a>
                 </div>

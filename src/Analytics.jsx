@@ -21,11 +21,12 @@ const SECTION_LABELS = {
   'contact_github': '🐈 GitHub',
   'contact_github_devops': '🐈 GitHub DevOps',
   'contact_medium': '📝 Medium',
+  'contact_phone': '📞 Phone (Hero)',
 };
 
 const NAV_SECTIONS = ['hero', 'about', 'experience', 'personal-projects', 'projects', 'awards', 'tech', 'contact', 'resumeViewed', 'linkedinViewed'];
 const SCROLL_SECTIONS = ['hero', 'about', 'experience', 'personal-projects', 'projects', 'awards', 'tech', 'contact'];
-const CONTACT_SECTIONS = ['contact_email', 'contact_linkedin', 'contact_instagram', 'contact_github', 'contact_github_devops', 'contact_medium'];
+const CONTACT_SECTIONS = ['contact_email', 'contact_linkedin', 'contact_instagram', 'contact_github', 'contact_github_devops', 'contact_medium', 'contact_phone'];
 
 const StatBox = ({ label, value, color = 'cyan', delay = 0 }) => {
   const colors = {

@@ -11,7 +11,7 @@
 | react | ^19.2.0 | UI framework |
 | react-dom | ^19.2.0 | DOM renderer |
 | framer-motion | ^12.23.25 | Animations |
-| firebase | ^11.10.0 | Firestore, Auth, Analytics |
+| firebase | ^11.0.0 | Firestore, Auth |
 | react-icons | ^5.6.0 | Icon library |
 
 ## Dev Dependencies
@@ -22,14 +22,18 @@
 | tailwindcss | ^3.4.1 | Utility CSS |
 | postcss + autoprefixer | latest | CSS processing |
 | eslint | ^9.39.1 | Linting (flat config) |
-| eslint-plugin-react-hooks | ^7.0.1 | Hooks rules |
-| eslint-plugin-react-refresh | ^0.4.24 | HMR safety |
 
 ## Build & Deployment
 - **Build tool**: rolldown-vite (drop-in Vite replacement using Rolldown bundler)
 - **Base path**: `/portfolio/` (set in `vite.config.js`)
 - **Deployment**: GitHub Actions → GitHub Pages (`gh-pages` branch)
-- **Container**: Dockerfile available for local Docker preview (`preview.sh`)
+- **Container**: Multi-stage Dockerfile with Firebase ARG injection + Nginx SPA config
+
+## Firebase Setup
+- **Firestore**: analytics tracking (pageViews, sectionClicks, sectionViews documents)
+- **Auth**: Email/Password only — used to protect analytics dashboard reads
+- **Rules**: `write: true` (anyone can write tracking), `read: if request.auth != null`
+- **API key**: Restricted to `https://kesavan-mariappan.github.io/*` in Google Cloud Console
 
 ## Environment Variables (`.env.local`)
 All prefixed with `VITE_FIREBASE_`:
@@ -46,5 +50,5 @@ npm run dev       # Start dev server (HMR)
 npm run build     # Production build → dist/
 npm run preview   # Preview production build locally
 npm run lint      # Run ESLint
-bash preview.sh   # Docker-based preview
+bash preview.sh   # Docker-based local preview at http://localhost:3000
 ```
